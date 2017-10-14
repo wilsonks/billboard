@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="ivy-report.xsl"?>
+<ivy-report version="1.0">
+	<info
+		organisation="org.scala-sbt.temp"
+		module="temp-resolve-2fa67eb241abba2a645c2cf6f8cfa34d4727afdc"
+		revision="1.0"
+		conf="runtime-internal"
+		confs="compile, runtime, test, provided, optional, compile-internal, runtime-internal, test-internal, plugin, sources, docs, pom, scala-tool"
+		date="20171011165551"/>
+	<dependencies>
+		<module organisation="com.badlogicgames.gdx" name="gdx-box2d-platform">
+			<revision name="1.9.6" status="release" pubdate="20171011112937" resolver="sbt-chain" artresolver="sbt-chain" homepage="" downloaded="false" searched="false" default="false" conf="default, compile, runtime, default(compile), master" position="0">
+				<license name="Apache Licence 2.0" url="http://www.apache.org/licenses/LICENSE-2.0"/>
+				<metadata-artifact status="no" details="" size="4532" time="0" location="/home/wilson/.ivy2/cache/com.badlogicgames.gdx/gdx-box2d-platform/ivy-1.9.6.xml" searched="false" origin-is-local="false" origin-location="http://repo-desktop:8081/artifactory/proxy-maven/com/badlogicgames/gdx/gdx-box2d-platform/1.9.6/gdx-box2d-platform-1.9.6.pom"/>
+				<caller organisation="org.scala-sbt.temp" name="temp-resolve-2fa67eb241abba2a645c2cf6f8cfa34d4727afdc" conf="compile, runtime-internal, runtime, optional" rev="1.9.6" rev-constraint-default="1.9.6" rev-constraint-dynamic="1.9.6" callerrev="1.0"/>
+				<artifacts>
+					<artifact name="gdx-box2d-platform" type="jar" ext="jar" extra-classifier="natives-desktop" status="no" details="" size="1030328" time="0" location="/home/wilson/.ivy2/cache/com.badlogicgames.gdx/gdx-box2d-platform/jars/gdx-box2d-platform-1.9.6-natives-desktop.jar">
+						<origin-location is-local="false" location="http://repo-desktop:8081/artifactory/proxy-maven/com/badlogicgames/gdx/gdx-box2d-platform/1.9.6/gdx-box2d-platform-1.9.6-natives-desktop.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+	</dependencies>
+</ivy-report>

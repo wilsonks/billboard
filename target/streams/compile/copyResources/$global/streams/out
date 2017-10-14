@@ -1,0 +1,18 @@
+[0m[[0mdebug[0m] [0mCopy resource mappings: [0m
+[0m[[0mdebug[0m] [0m	(/home/wilson/tykhe-workspace/billboard/src/main/resources/billboard,/home/wilson/tykhe-workspace/billboard/target/scala-2.12/classes/billboard)[0m
+[0m[[0mdebug[0m] [0m	(/home/wilson/tykhe-workspace/billboard/src/main/resources/billboard/orig,/home/wilson/tykhe-workspace/billboard/target/scala-2.12/classes/billboard/orig)[0m
+[0m[[0mdebug[0m] [0m	(/home/wilson/tykhe-workspace/billboard/src/main/resources/billboard/particles,/home/wilson/tykhe-workspace/billboard/target/scala-2.12/classes/billboard/particles)[0m
+[0m[[0mdebug[0m] [0m	(/home/wilson/tykhe-workspace/billboard/src/main/resources/billboard/project.dt,/home/wilson/tykhe-workspace/billboard/target/scala-2.12/classes/billboard/project.dt)[0m
+[0m[[0mdebug[0m] [0m	(/home/wilson/tykhe-workspace/billboard/src/main/resources/billboard/scenes,/home/wilson/tykhe-workspace/billboard/target/scala-2.12/classes/billboard/scenes)[0m
+[0m[[0mdebug[0m] [0m	(/home/wilson/tykhe-workspace/billboard/src/main/resources/billboard/freetypefonts,/home/wilson/tykhe-workspace/billboard/target/scala-2.12/classes/billboard/freetypefonts)[0m
+[0m[[0mdebug[0m] [0m	(/home/wilson/tykhe-workspace/billboard/src/main/resources/billboard/orig/spriter_animations,/home/wilson/tykhe-workspace/billboard/target/scala-2.12/classes/billboard/orig/spriter_animations)[0m
+[0m[[0mdebug[0m] [0m	(/home/wilson/tykhe-workspace/billboard/src/main/resources/billboard/orig/spine_animations,/home/wilson/tykhe-workspace/billboard/target/scala-2.12/classes/billboard/orig/spine_animations)[0m
+[0m[[0mdebug[0m] [0m	(/home/wilson/tykhe-workspace/billboard/src/main/resources/billboard/orig/pack.png,/home/wilson/tykhe-workspace/billboard/target/scala-2.12/classes/billboard/orig/pack.png)[0m
+[0m[[0mdebug[0m] [0m	(/home/wilson/tykhe-workspace/billboard/src/main/resources/billboard/orig/pack.atlas,/home/wilson/tykhe-workspace/billboard/target/scala-2.12/classes/billboard/orig/pack.atlas)[0m
+[0m[[0mdebug[0m] [0m	(/home/wilson/tykhe-workspace/billboard/src/main/resources/billboard/orig/sprite_animations,/home/wilson/tykhe-workspace/billboard/target/scala-2.12/classes/billboard/orig/sprite_animations)[0m
+[0m[[0mdebug[0m] [0m	(/home/wilson/tykhe-workspace/billboard/src/main/resources/billboard/scenes/MainScene.dt,/home/wilson/tykhe-workspace/billboard/target/scala-2.12/classes/billboard/scenes/MainScene.dt)[0m
+[0m[[0mdebug[0m] [0m	(/home/wilson/tykhe-workspace/billboard/src/main/resources/billboard/freetypefonts/Arial Black.ttf,/home/wilson/tykhe-workspace/billboard/target/scala-2.12/classes/billboard/freetypefonts/Arial Black.ttf)[0m
+[0m[[0mdebug[0m] [0m	(/home/wilson/tykhe-workspace/billboard/src/main/resources/billboard/freetypefonts/Arctik 5.ttf,/home/wilson/tykhe-workspace/billboard/target/scala-2.12/classes/billboard/freetypefonts/Arctik 5.ttf)[0m
+[0m[[0mdebug[0m] [0m	(/home/wilson/tykhe-workspace/billboard/src/main/resources/billboard/freetypefonts/Impact.ttf,/home/wilson/tykhe-workspace/billboard/target/scala-2.12/classes/billboard/freetypefonts/Impact.ttf)[0m
+[0m[[0mdebug[0m] [0m	(/home/wilson/tykhe-workspace/billboard/src/main/resources/billboard/freetypefonts/Abyssinica SIL.ttf,/home/wilson/tykhe-workspace/billboard/target/scala-2.12/classes/billboard/freetypefonts/Abyssinica SIL.ttf)[0m
+[0m[[0mdebug[0m] [0m	(/home/wilson/tykhe-workspace/billboard/src/main/resources/billboard/freetypefonts/AR ESSENCE.ttf,/home/wilson/tykhe-workspace/billboard/target/scala-2.12/classes/billboard/freetypefonts/AR ESSENCE.ttf)[0m
