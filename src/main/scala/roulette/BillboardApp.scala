@@ -8,7 +8,7 @@ import display.io.WindowConfig
 import monix.execution.Scheduler
 import monix.execution.schedulers.SchedulerService
 import monix.reactive.Observable
-import roulette.ecs.BillboardSceneUpdated
+import roulette.ecs.BillboardScene
 import scodec.bits.ByteVector
 
 import scala.concurrent.duration._
@@ -20,7 +20,7 @@ object BillboardApp extends App {
 
   // display
   val config = WindowConfig(position = (2020, 100), dimensions = (600, 900))
-  val (scene, ui) = display.io.desktop.open(BillboardSceneUpdated() -> config)
+  val (scene, ui) = display.io.desktop.open(BillboardScene() -> config)
 
   val device = Observable.interval(2.seconds)
     .map { x => (math.random() * 37).toInt }

@@ -4,7 +4,7 @@
 		module="billboard$sources_2.12"
 		revision="0.5.8"
 		status="integration"
-		publication="20171013135900"
+		publication="20171017211139"
 	/>
 	<configurations>
 		<conf name="compile" visibility="public" description=""/>

@@ -4,7 +4,7 @@
 		module="billboard-build"
 		revision="0.1-SNAPSHOT"
 		status="integration"
-		publication="20171013135401"
+		publication="20171017204824"
 		e:sbtVersion="0.13" e:scalaVersion="2.10"
 	>
 		<description>

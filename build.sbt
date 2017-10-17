@@ -46,7 +46,7 @@ lazy val sharedSettings = Seq(
   }),
   scalacOptions ++= (CrossVersion.partialVersion(scalaVersion.value) match {
     case Some((2, majorVersion)) if majorVersion >= 11 => Seq(
-
+      "-Xfatal-warnings", // turns all warnings into errors
       "-Xlint:adapted-args", // warn if an argument list is modified to match the receiver
       "-Xlint:nullary-unit", // warn when nullary methods return Unit
       "-Xlint:inaccessible", // warn about inaccessible types in method signatures
