@@ -8,7 +8,9 @@ import roulette.State
 import rx.{Ctx, Rx, Var}
 
 
-class BillboardScene extends Scene[Any, Any]("billboard") {
+
+
+class BillboardScene extends Scene[Any, Any]("billboard1") {
 
   implicit def owner: Ctx.Owner = Ctx.Owner.Unsafe
 
@@ -25,7 +27,7 @@ class BillboardScene extends Scene[Any, Any]("billboard") {
       case s: State.Running => s.history
     }
 
-    val maxSpins = 100
+    val maxSpins = 300
     val blackNumbers = List(2, 4, 6, 8, 10, 11, 13, 15, 17, 20, 22, 24, 26, 28, 29, 31, 33, 35)
     val redNumbers = List(1, 3, 5, 7, 9, 12, 14, 16, 18, 19, 21, 23, 25, 27, 30, 32, 34, 36)
 
@@ -33,9 +35,20 @@ class BillboardScene extends Scene[Any, Any]("billboard") {
     val redSymbols = redNumbers.map(i => (" " + i.toString()).takeRight(2))
     val zeroSymbols = List(" 0","00")
     
-    val symbolToInt = (blackSymbols ++ redSymbols ++ zeroSymbols)
-      .groupBy(s => s)
-      .mapValues(li => li.head.trim().toInt)
+//    val symbolToInt = (blackSymbols ++ redSymbols ++ zeroSymbols)
+//      .groupBy(s => s)
+//      .mapValues(li => li.head.trim().toInt)
+
+
+    val symbolToInt: Map[String, Int] = Map("0" -> 0, " 0" -> 0, "00" -> 0, " 1" -> 1, " 2" -> 2, " 3" -> 3, " 4" -> 4,
+      " 5" -> 5, " 6" -> 6, " 7" -> 7, " 8" -> 8, " 9" -> 9, "01" -> 1,
+      "02" -> 2, "03" -> 3, "04" -> 4, "05" -> 5, "06" -> 6, "07" -> 7,
+      "08" -> 8, "09" -> 9, "10" -> 10, "11" -> 11, "12" -> 12, "13" -> 13,
+      "14" -> 14, "15" -> 15, "16" -> 16, "17" -> 17, "18" -> 18, "19" -> 19,
+      "20" -> 20, "21" -> 21, "22" -> 22, "23" -> 23, "24" -> 24, "25" -> 25,
+      "26" -> 26, "27" -> 27, "28" -> 28, "29" -> 29, "30" -> 30, "31" -> 31,
+      "32" -> 32, "33" -> 33, "34" -> 34, "35" -> 35, "36" -> 36
+    )
 
     //Level 0
     val spinResults: Var[Seq[String]] = Var(Seq.empty[String])
@@ -97,10 +110,20 @@ class BillboardScene extends Scene[Any, Any]("billboard") {
     val oneTo18Percentage = Rx("%d%%".format((100 * oneTo18Count()) / spinCount()))
     val nineteenTo36Percentage = Rx("%d%%".format((100 * nineteenTo36Count()) / spinCount()))
 
+
+    val symbols = (0 to 36).map(i => (" " + i.toString()).takeRight(2))
+    val emptyCounts = symbols.map(_ -> 0).toMap
+    val liveCounts = spinResults.map(xs => (emptyCounts ++ xs.groupBy(s => s).mapValues(_.size)).toSeq.sortBy(_._2))
+    val hot = liveCounts.map(_.takeRight(4))
+    val cold = liveCounts.map(_.take(4))
+    hot.foreach(h => println(s"hot: $h"))
+    cold.foreach(h => println(s"cold: $h"))
+
+
+
     (scene.root / "maxWinHistory").label.setText(s"Based on last $maxSpins games")
 
     spinResults.triggerLater {
-      println(symbolToInt)
       blackSymbols.contains(lastWinNumber.now) match {
         case true => Rx(lastWinNumber.now)
           .updatesWithColor(scene.root / "lastWinNumber", new Color(0x000000ff))
@@ -135,27 +158,69 @@ class BillboardScene extends Scene[Any, Any]("billboard") {
             case (0, _, _) =>
             case (j, num, "black") => {
               Rx("").updates(scene.root / s"r$j")
-              Rx("").updates(scene.root / s"z$j")
+              Rx("").updates(scene.root / s"g$j")
               Rx(num).updates(scene.root / s"b$j")
             }
             case (j, num, "red") => {
               Rx("").updates(scene.root / s"b$j")
-              Rx("").updates(scene.root / s"z$j")
+              Rx("").updates(scene.root / s"g$j")
               Rx(num).updates(scene.root / s"r$j")
             }
             case (j, num, "green") => {
               Rx("").updates(scene.root / s"b$j")
               Rx("").updates(scene.root / s"r$j")
-              Rx(num).updates(scene.root / s"z$j")
+              Rx(num).updates(scene.root / s"g$j")
             }
 
             case (_,_,_) =>
           }
       }
 
+      hot.now.zipWithIndex
+        .foreach{
+          case ((x,y),z) => {
+            val index = 4 - z
+            (scene.root / s"hc$index").label.setText(s"$y")
+            blackSymbols.contains(x) match {
+              case true => Rx(x)
+                .updatesWithColor(scene.root / s"h$index", new Color(0x000000ff))
+              case false => {
+                redSymbols.contains(x) match {
+                  case true => Rx(x)
+                    .updatesWithColor(scene.root / s"h$index", new Color(0xc70000ff))
+                  case false => Rx(x)
+                    .updatesWithColor(scene.root / s"h$index", new Color(0x2A7302FF))
+                }
+
+              }
+            }
+          }
+        }
+
+      cold.now.zipWithIndex
+        .foreach{
+          case ((x,y),z) => {
+            val index = z+ 1
+            (scene.root / s"cc$index").label.setText(s"$y")
+            blackSymbols.contains(x) match {
+              case true => Rx(x)
+                .updatesWithColor(scene.root / s"c$index", new Color(0x000000ff))
+              case false => {
+                redSymbols.contains(x) match {
+                  case true => Rx(x)
+                    .updatesWithColor(scene.root / s"c$index", new Color(0xc70000ff))
+                  case false => Rx(x)
+                    .updatesWithColor(scene.root / s"c$index", new Color(0x2A7302FF))
+                }
+
+              }
+            }
+          }
+        }
+
 
       oddPercentage.updates(scene.root / "oddPercentage")
-      zeroPercentage.updates(scene.root / "zeroPercentage")
+//      zeroPercentage.updates(scene.root / "zeroPercentage")
       evenPercentage.updates(scene.root / "evenPercentage")
 
       redPercentage.updates(scene.root / "redPercentage")
@@ -171,18 +236,12 @@ class BillboardScene extends Scene[Any, Any]("billboard") {
 
     }
 
-    val symbols = (0 to 36).map(i => (" " + i.toString()).takeRight(2))
-    val emptyCounts = symbols.map(_ -> 0).toMap
-    val liveCounts = spinResults.map(xs => (emptyCounts ++ xs.groupBy(s => s).mapValues(_.size)).toSeq.sortBy(_._2))
-    val hot = liveCounts.map(_.takeRight(4))
-    val cold = liveCounts.map(_.take(4))
-    hot.foreach(h => println(s"hot: $h"))
-    cold.foreach(h => println(s"cold: $h"))
+
 
     reader.foreach {
       case Win(num) => {
         try {
-          spinResults() = (num +: spinResults.now).take(100)
+          spinResults() = (num +: spinResults.now).take(maxSpins)
         } catch {
           case t: Throwable => t.printStackTrace()
         }
