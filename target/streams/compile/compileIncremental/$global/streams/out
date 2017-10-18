@@ -2,58 +2,14 @@
 [0m[[0mdebug[0m] [0m[naha] Initial source changes: [0m
 [0m[[0mdebug[0m] [0m[naha] 	removed:Set()[0m
 [0m[[0mdebug[0m] [0m[naha] 	added: Set()[0m
-[0m[[0mdebug[0m] [0m[naha] 	modified: Set(/home/wilson/tykhe-workspace/billboard/src/main/scala/roulette/ecs/BillboardScene.scala)[0m
-[0m[[0mdebug[0m] [0m[naha] Invalidated products: Set(/home/wilson/tykhe-workspace/billboard/target/scala-2.12/classes/roulette/ecs/BillboardScene.class, /home/wilson/tykhe-workspace/billboard/target/scala-2.12/classes/roulette/ecs/BillboardScene$.class)[0m
+[0m[[0mdebug[0m] [0m[naha] 	modified: Set()[0m
+[0m[[0mdebug[0m] [0m[naha] Invalidated products: Set()[0m
 [0m[[0mdebug[0m] [0m[naha] External API changes: API Changes: Set()[0m
 [0m[[0mdebug[0m] [0m[naha] Modified binary dependencies: Set()[0m
-[0m[[0mdebug[0m] [0m[naha] Initial directly invalidated sources: Set(/home/wilson/tykhe-workspace/billboard/src/main/scala/roulette/ecs/BillboardScene.scala)[0m
+[0m[[0mdebug[0m] [0m[naha] Initial directly invalidated sources: Set()[0m
 [0m[[0mdebug[0m] [0m[naha] [0m
 [0m[[0mdebug[0m] [0m[naha] Sources indirectly invalidated by:[0m
-[0m[[0mdebug[0m] [0m[naha] 	product: Set(/home/wilson/tykhe-workspace/billboard/src/main/scala/roulette/ecs/BillboardScene.scala)[0m
+[0m[[0mdebug[0m] [0m[naha] 	product: Set()[0m
 [0m[[0mdebug[0m] [0m[naha] 	binary dep: Set()[0m
 [0m[[0mdebug[0m] [0m[naha] 	external source: Set()[0m
-[0m[[0mdebug[0m] [0mAll initially invalidated sources: Set(/home/wilson/tykhe-workspace/billboard/src/main/scala/roulette/ecs/BillboardScene.scala)[0m
-[0m[[0mdebug[0m] [0m[naha] Initial set of included nodes: Set(/home/wilson/tykhe-workspace/billboard/src/main/scala/roulette/ecs/BillboardScene.scala)[0m
-[0m[[0minfo[0m] [0mCompiling 1 Scala source to /home/wilson/tykhe-workspace/billboard/target/scala-2.12/classes...[0m
-[0m[[0mdebug[0m] [0mGetting org.scala-sbt:compiler-interface:0.13.15:component from component compiler for Scala 2.12.2[0m
-[0m[[0mdebug[0m] [0mGetting org.scala-sbt:compiler-interface:0.13.15:component from component compiler for Scala 2.12.2[0m
-[0m[[0mdebug[0m] [0mRunning cached compiler 51bab5c, interfacing (CompilerInterface) with Scala compiler version 2.12.2[0m
-[0m[[0mdebug[0m] [0mCalling Scala compiler with arguments  (CompilerInterface):[0m
-[0m[[0mdebug[0m] [0m	-sourcepath[0m
-[0m[[0mdebug[0m] [0m	/home/wilson/tykhe-workspace/billboard/[0m
-[0m[[0mdebug[0m] [0m	-Xfatal-warnings[0m
-[0m[[0mdebug[0m] [0m	-Xlint:adapted-args[0m
-[0m[[0mdebug[0m] [0m	-Xlint:nullary-unit[0m
-[0m[[0mdebug[0m] [0m	-Xlint:inaccessible[0m
-[0m[[0mdebug[0m] [0m	-Xlint:nullary-override[0m
-[0m[[0mdebug[0m] [0m	-Xlint:infer-any[0m
-[0m[[0mdebug[0m] [0m	-Xlint:missing-interpolator[0m
-[0m[[0mdebug[0m] [0m	-Xlint:doc-detached[0m
-[0m[[0mdebug[0m] [0m	-Xlint:private-shadow[0m
-[0m[[0mdebug[0m] [0m	-Xlint:type-parameter-shadow[0m
-[0m[[0mdebug[0m] [0m	-Xlint:poly-implicit-overload[0m
-[0m[[0mdebug[0m] [0m	-Xlint:option-implicit[0m
-[0m[[0mdebug[0m] [0m	-Xlint:delayedinit-select[0m
-[0m[[0mdebug[0m] [0m	-Xlint:by-name-right-associative[0m
-[0m[[0mdebug[0m] [0m	-Xlint:package-object-classes[0m
-[0m[[0mdebug[0m] [0m	-Xlint:unsound-match[0m
-[0m[[0mdebug[0m] [0m	-unchecked[0m
-[0m[[0mdebug[0m] [0m	-deprecation[0m
-[0m[[0mdebug[0m] [0m	-feature[0m
-[0m[[0mdebug[0m] [0m	-language:higherKinds[0m
-[0m[[0mdebug[0m] [0m	-language:implicitConversions[0m
-[0m[[0mdebug[0m] [0m	-language:experimental.macros[0m
-[0m[[0mdebug[0m] [0m	-Ywarn-inaccessible[0m
-[0m[[0mdebug[0m] [0m	-Xexperimental[0m
-[0m[[0mdebug[0m] [0m	-Ywarn-unused-import[0m
-[0m[[0mdebug[0m] [0m	-bootclasspath[0m
-[0m[[0mdebug[0m] [0m	/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/resources.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/rt.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/sunrsasign.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jsse.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jce.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/charsets.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jfr.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/classes:/home/wilson/.ivy2/cache/org.scala-lang/scala-library/jars/scala-library-2.12.2.jar[0m
-[0m[[0mdebug[0m] [0m	-classpath[0m
-[0m[[0mdebug[0m] [0m	/home/wilson/tykhe-workspace/billboard/target/scala-2.12/classes:/home/wilson/.ivy2/cache/io.device/device-usb_2.12/jars/device-usb_2.12-0.5.8.jar:/home/wilson/.ivy2/cache/io.display/display-desktop_2.12/jars/display-desktop_2.12-0.7.3.jar:/home/wilson/.ivy2/cache/io.display/display-ecs_2.12/jars/display-ecs_2.12-0.7.3.jar:/home/wilson/.ivy2/cache/com.badlogicgames.gdx/gdx-platform/jars/gdx-platform-1.9.6-natives-desktop.jar:/home/wilson/.ivy2/cache/com.badlogicgames.gdx/gdx-freetype-platform/jars/gdx-freetype-platform-1.9.6-natives-desktop.jar:/home/wilson/.ivy2/cache/com.badlogicgames.gdx/gdx-box2d-platform/jars/gdx-box2d-platform-1.9.6-natives-desktop.jar:/home/wilson/.ivy2/cache/org.usb4java/usb4java/jars/usb4java-1.2.0.jar:/home/wilson/.ivy2/cache/io.device/device-io_2.12/jars/device-io_2.12-0.5.8.jar:/home/wilson/.ivy2/cache/com.badlogicgames.gdx/gdx-backend-lwjgl3/jars/gdx-backend-lwjgl3-1.9.6.jar:/home/wilson/.ivy2/cache/io.display/display-gdx_2.12/jars/display-gdx_2.12-0.7.3.jar:/home/wilson/.ivy2/cache/com.lihaoyi/scalarx_2.12/jars/scalarx_2.12-0.3.2.jar:/home/wilson/.ivy2/cache/com.badlogicgames.gdx/gdx-freetype/jars/gdx-freetype-1.9.6.jar:/home/wilson/.ivy2/cache/com.badlogicgames.box2dlights/box2dlights/jars/box2dlights-1.4.jar:/home/wilson/.ivy2/cache/com.badlogicgames.ashley/ashley/jars/ashley-1.7.3.jar:/home/wilson/.ivy2/cache/org.apache.commons/commons-lang3/jars/commons-lang3-3.2.1.jar:/home/wilson/.ivy2/cache/org.usb4java/libusb4java/jars/libusb4java-1.2.0-windows-x86_64.jar:/home/wilson/.ivy2/cache/org.usb4java/libusb4java/jars/libusb4java-1.2.0-linux-x86.jar:/home/wilson/.ivy2/cache/org.usb4java/libusb4java/jars/libusb4java-1.2.0-linux-x86_64.jar:/home/wilson/.ivy2/cache/org.usb4java/libusb4java/jars/libusb4java-1.2.0-osx-x86.jar:/home/wilson/.ivy2/cache/org.usb4java/libusb4java/jars/libusb4java-1.2.0-windows-x86.jar:/home/wilson/.ivy2/cache/org.usb4java/libusb4java/jars/libusb4java-1.2.0-linux-arm.jar:/home/wilson/.ivy2/cache/org.usb4java/libusb4java/jars/libusb4java-1.2.0-osx-x86_64.jar:/home/wilson/.ivy2/cache/org.scodec/scodec-core_2.12/bundles/scodec-core_2.12-1.10.3.jar:/home/wilson/.ivy2/cache/io.device/device-domain_2.12/jars/device-domain_2.12-0.5.8.jar:/home/wilson/.ivy2/cache/org.jcraft/jorbis/jars/jorbis-0.0.17.jar:/home/wilson/.ivy2/cache/com.badlogicgames.jlayer/jlayer/jars/jlayer-1.0.1-gdx.jar:/home/wilson/.ivy2/cache/org.lwjgl/lwjgl-openal/jars/lwjgl-openal-3.1.0.jar:/home/wilson/.ivy2/cache/org.lwjgl/lwjgl-openal/jars/lwjgl-openal-3.1.0-natives-windows.jar:/home/wilson/.ivy2/cache/org.lwjgl/lwjgl-openal/jars/lwjgl-openal-3.1.0-natives-macos.jar:/home/wilson/.ivy2/cache/org.lwjgl/lwjgl-openal/jars/lwjgl-openal-3.1.0-natives-linux.jar:/home/wilson/.ivy2/cache/org.lwjgl/lwjgl-opengl/jars/lwjgl-opengl-3.1.0.jar:/home/wilson/.ivy2/cache/org.lwjgl/lwjgl-jemalloc/jars/lwjgl-jemalloc-3.1.0-natives-windows.jar:/home/wilson/.ivy2/cache/org.lwjgl/lwjgl-jemalloc/jars/lwjgl-jemalloc-3.1.0-natives-macos.jar:/home/wilson/.ivy2/cache/org.lwjgl/lwjgl-jemalloc/jars/lwjgl-jemalloc-3.1.0-natives-linux.jar:/home/wilson/.ivy2/cache/org.lwjgl/lwjgl-jemalloc/jars/lwjgl-jemalloc-3.1.0.jar:/home/wilson/.ivy2/cache/org.lwjgl/lwjgl-glfw/jars/lwjgl-glfw-3.1.0-natives-windows.jar:/home/wilson/.ivy2/cache/org.lwjgl/lwjgl-glfw/jars/lwjgl-glfw-3.1.0-natives-macos.jar:/home/wilson/.ivy2/cache/org.lwjgl/lwjgl-glfw/jars/lwjgl-glfw-3.1.0.jar:/home/wilson/.ivy2/cache/org.lwjgl/lwjgl-glfw/jars/lwjgl-glfw-3.1.0-natives-linux.jar:/home/wilson/.ivy2/cache/io.display/display-io_2.12/jars/display-io_2.12-0.7.3.jar:/home/wilson/.ivy2/cache/com.badlogicgames.gdx/gdx-box2d/jars/gdx-box2d-1.9.6.jar:/home/wilson/.ivy2/cache/com.chuusai/shapeless_2.12/bundles/shapeless_2.12-2.3.2.jar:/home/wilson/.ivy2/cache/org.scodec/scodec-bits_2.12/bundles/scodec-bits_2.12-1.1.2.jar:/home/wilson/.ivy2/cache/io.monix/monix-reactive_2.12/jars/monix-reactive_2.12-2.3.0.jar:/home/wilson/.ivy2/cache/org.lwjgl/lwjgl/jars/lwjgl-3.1.0-natives-windows.jar:/home/wilson/.ivy2/cache/org.lwjgl/lwjgl/jars/lwjgl-3.1.0-natives-macos.jar:/home/wilson/.ivy2/cache/org.lwjgl/lwjgl/jars/lwjgl-3.1.0.jar:/home/wilson/.ivy2/cache/org.lwjgl/lwjgl/jars/lwjgl-3.1.0-natives-linux.jar:/home/wilson/.ivy2/cache/com.badlogicgames.gdx/gdx/jars/gdx-1.9.6.jar:/home/wilson/.ivy2/cache/io.display/display-domain_2.12/jars/display-domain_2.12-0.7.3.jar:/home/wilson/.ivy2/cache/org.jctools/jctools-core/bundles/jctools-core-2.0.1.jar:/home/wilson/.ivy2/cache/io.monix/monix-eval_2.12/jars/monix-eval_2.12-2.3.0.jar:/home/wilson/.ivy2/cache/org.typelevel/macro-compat_2.12/jars/macro-compat_2.12-1.1.1.jar:/home/wilson/.ivy2/cache/io.monix/monix-execution_2.12/jars/monix-execution_2.12-2.3.0.jar:/home/wilson/.ivy2/cache/io.monix/monix-types_2.12/jars/monix-types_2.12-2.3.0.jar:/home/wilson/.ivy2/cache/org.reactivestreams/reactive-streams/jars/reactive-streams-1.0.0.jar[0m
-[0m[[0mdebug[0m] [0mScala compilation took 1.573160149 s[0m
-[0m[[0mdebug[0m] [0m[naha] New invalidations:[0m
-[0m[[0mdebug[0m] [0m[naha] 	Set()[0m
-[0m[[0mdebug[0m] [0m[naha] Initial set of included nodes: Set()[0m
-[0m[[0mdebug[0m] [0m[naha] Previously invalidated, but (transitively) depend on new invalidations:[0m
-[0m[[0mdebug[0m] [0m[naha] 	Set()[0m
-[0m[[0mdebug[0m] [0m[naha] All newly invalidated sources after taking into account (previously) recompiled sources:Set()[0m
+[0m[[0mdebug[0m] [0mAll initially invalidated sources: Set()[0m

@@ -19,7 +19,7 @@ object BillboardApp extends App {
   val latch = new CountDownLatch(1)
 
   // display
-  val config = WindowConfig(position = (2020, 100), dimensions = (600, 900))
+  val config = WindowConfig(position = (2020, 10), dimensions = (900, 1600))
   val (scene, ui) = display.io.desktop.open(BillboardScene() -> config)
 
   val device = Observable.interval(2.seconds)
