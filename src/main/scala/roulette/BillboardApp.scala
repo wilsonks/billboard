@@ -19,7 +19,8 @@ object BillboardApp extends App {
   val latch = new CountDownLatch(1)
 
   // display
-  val config = WindowConfig(position = (2020, 10), dimensions = (900, 1600))
+//  val config = WindowConfig(position = (2000, 20), dimensions = (900, 1600))
+  val config = WindowConfig(position = (2020, 0), dimensions = (882, 1568))
   val (scene, ui) = display.io.desktop.open(BillboardScene() -> config)
 
   val device = Observable.interval(2.seconds)
@@ -51,6 +52,9 @@ object BillboardApp extends App {
 
   device.decode(Input.codec)
     .debug("protocol")
+    .collect {
+      case Win(num) => Event.SpinCompleted(num)
+    }
     .foreach(scene.onNext)
 
   ui.doOnTerminate(_ => latch.countDown()).subscribe()

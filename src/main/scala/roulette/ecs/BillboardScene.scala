@@ -1,10 +1,15 @@
 package roulette.ecs
 
+import com.badlogic.ashley.core.Entity
 import com.badlogic.gdx.graphics.Color
-import device.cammegh.slingshot.Win
 import display.ecs._
+import display.io._
+import monix.execution.Cancelable
+import monix.execution.cancelables.SerialCancelable
 import monix.reactive.{Observable, Observer}
-import roulette.State
+import roulette.BillboardState._
+import roulette.Event.SpinCompleted
+import roulette.{BillboardState, Event}
 import rx.{Ctx, Rx, Var}
 
 
@@ -12,52 +17,30 @@ class BillboardScene extends Scene[Any, Any]("billboard1") {
 
   implicit def owner: Ctx.Owner = Ctx.Owner.Unsafe
 
-  override def bind(writer: Observer[Any], reader: Observable[Any])(implicit scene: SceneContext): Unit = {
+  override def bind(writer: Observer[Any], reader: Observable[Any])(implicit scene: SceneContext): Unit = try {
     scene.loader.loadScene("MainScene")
 
-    val state: Var[State] = Var(State.Empty(10))
-    val stateLast = state.map {
-      case _: State.Empty => ""
-      case s: State.Running => s.last
-    }
-    val stateHistory = state.map {
-      case _: State.Empty => Nil
-      case s: State.Running => s.history
-    }
+    val state: Var[BillboardState] = Var(BillboardState("TABLE100", Seq.empty[String], 100,100,10000))
 
-    val maxSpins = 300
-    val blackNumbers = List(2, 4, 6, 8, 10, 11, 13, 15, 17, 20, 22, 24, 26, 28, 29, 31, 33, 35)
-    val redNumbers = List(1, 3, 5, 7, 9, 12, 14, 16, 18, 19, 21, 23, 25, 27, 30, 32, 34, 36)
-    val evenNumbers = List.range(2,37,2)
-    val oddNumbers = List.range(1,36,2)
-
-    val zeroSymbols = List(" 0", "00")
-    val blackSymbols = blackNumbers.map(i => (" " + i.toString()).takeRight(2))
-    val redSymbols = redNumbers.map(i => (" " + i.toString()).takeRight(2))
-    val evenSymbols = evenNumbers.map(i => (" " + i.toString()).takeRight(2))
-    val oddSymbols = oddNumbers.map(i => (" " + i.toString()).takeRight(2))
-
-    val symbols1to18 = List.range(1,19).map(i => (" " + i.toString()).takeRight(2))
-    val symbols19to36 = List.range(19,37).map(i => (" " + i.toString()).takeRight(2))
-
-    val symbols1to12 = List.range(1,13).map(i => (" " + i.toString()).takeRight(2))
-    val symbols13to24 = List.range(13,25).map(i => (" " + i.toString()).takeRight(2))
-    val symbols25to36 = List.range(25,37).map(i => (" " + i.toString()).takeRight(2))
-
-    val symbolToInt = (blackSymbols ++ redSymbols ++ zeroSymbols)
-      .groupBy(s => s)
-      .mapValues(li => li.head.trim().toInt)
+    //target is
+    val target = Var(Option.empty[EditText])
+    val spinEdit = EditText(scene.root / "maxWin", 3, Var(true))
+    val nameEdit = EditText(scene.root / "name", 10, Var(true))
+    val minEdit = EditText(scene.root / "min", 5, Var(true))
+    val maxEdit = EditText(scene.root / "max", 5, Var(true))
 
     //Level 0
-    val spinResults: Var[Seq[String]] = Var(Seq.empty[String])
-
-    (scene.root / "maxWinHistory").label.setText(s"Based on last $maxSpins games")
+    val spinResults = state.map(x => x.history)
+    val maxSpins = state.map(x => x.maxSpinCount)
+    val name = state.map(x => x.name)
+    val min = state.map(x => x.min)
+    val max = state.map(x => x.max)
 
     //Level 1
     val lastWinNumber = spinResults.map(x => x.headOption.getOrElse(""))
-    val spinHistory = spinResults.map(x => x.take(maxSpins))
+    val spinHistory = spinResults.map(x => x.take(maxSpins()))
 
-    val spinCount = Rx(if (spinHistory().isEmpty) maxSpins else spinHistory().length)
+    val spinCount = Rx(if (spinHistory().isEmpty) maxSpins() else spinHistory().length)
 
     val evenCount = spinHistory.map(x => x.count(m => evenSymbols.contains(m)))
     val oddCount = spinHistory.map(x => x.count(m => oddSymbols.contains(m)))
@@ -88,11 +71,20 @@ class BillboardScene extends Scene[Any, Any]("billboard1") {
     val oneTo18Percentage = Rx("%d%%".format((100 * oneTo18Count()) / spinCount()))
     val nineteenTo36Percentage = Rx("%d%%".format((100 * nineteenTo36Count()) / spinCount()))
 
+
+    //    val bar = scene.root / "bar"
+    //    val minWidth = bar.dimensions.width
+    //    val barWidth = Rx(100f * oddCount() / spinCount())
+    //    barWidth.foreach(dx => bar.dimensions.width = minWidth + dx)
+
+
+  //  maxSpins.map(x => Rx(x.toString).updates(scene.root / "maxWin"))
+
     oddPercentage.map(x => Rx(x).updates(scene.root / "oddPercentage"))
     evenPercentage.map(x => Rx(x).updates(scene.root / "evenPercentage"))
 
     redPercentage.map(x => Rx(x).updates(scene.root / "redPercentage"))
-    blackPercentage.map(x =>  Rx(x).updates(scene.root / "blackPercentage"))
+    blackPercentage.map(x => Rx(x).updates(scene.root / "blackPercentage"))
     greenPercentage.updates(scene.root / "colorZeroPercentage")
 
     oneTo12Percentage.map(x => Rx(x).updates(scene.root / "oneTo12Percentage"))
@@ -102,15 +94,7 @@ class BillboardScene extends Scene[Any, Any]("billboard1") {
     oneTo18Percentage.map(x => Rx(x).updates(scene.root / "oneTo18Percentage"))
     nineteenTo36Percentage.map(x => Rx(x).updates(scene.root / "nineteenTo36Percentage"))
 
-    spinResults.trigger {
-    println("Spin Result = " + spinResults.now)
-    println("Spin Count = " + spinCount.now)
-    println("Last Win Number = " + lastWinNumber.now)
-    println("Spin History = " + spinHistory.now)
-    println("Zero Count = " + zeroCount.now)
-    }
-
-    val symbols = (0 to 36).map(i => (" " + i.toString()).takeRight(2))
+    val symbols = (0 to 36).map(i => (" " + i.toString).takeRight(2))
     val emptyCounts = symbols.map(_ -> 0).toMap
     val liveCounts = spinResults.map(xs => (emptyCounts ++ xs.groupBy(s => s).mapValues(_.size)).toSeq.sortBy(_._2))
     val hot = liveCounts.map(_.takeRight(4))
@@ -191,31 +175,139 @@ class BillboardScene extends Scene[Any, Any]("billboard1") {
 
     lastWinNumber.map(x =>
       blackSymbols.contains(x) match {
-      case true => Rx(x)
-        .updatesWithColor(scene.root / "lastWinNumber", new Color(0x000000FF))
-      case false => {
-        redSymbols.contains(x) match {
-          case true => Rx(x)
-            .updatesWithColor(scene.root / "lastWinNumber", new Color(0xFF0000FF))
-          case false => Rx(x)
-            .updatesWithColor(scene.root / "lastWinNumber", new Color(0x00FF00FF))
-        }
+        case true => Rx(x)
+          .updatesWithColor(scene.root / "lastWinNumber", new Color(0x000000FF))
+        case false => {
+          redSymbols.contains(x) match {
+            case true => Rx(x)
+              .updatesWithColor(scene.root / "lastWinNumber", new Color(0xFF0000FF))
+            case false => Rx(x)
+              .updatesWithColor(scene.root / "lastWinNumber", new Color(0x00FF00FF))
+          }
 
+        }
+      })
+
+
+
+
+    nameEdit.checked.trigger {
+      val current = name.now
+      nameEdit.checked.foreach(c => target() = if (c) Some(nameEdit) else None)
+      nameEdit.checked.map(if (_) 0.5f else 1f).foreach(nameEdit.entity.tint.color.a = _)
+      val keying = SerialCancelable()
+      val keys = scene.inputs.collect {
+        case KeyTyped(key) => key.toString
       }
-    })
+      target.foreach(t =>
+        keying := t.fold(Cancelable.empty)(e =>
+          keys.takeWhile(_ != "\n")
+            .doOnTerminate(_ => scene.input() = InputEmpty)
+            .scan("")(_.takeRight(e.size - 1) + _).foreach(e.entity.label.setText)))
+
+      val updated = (scene.root / "name").label.text.toString
+      updated match {
+        case x if x == "" => (scene.root / "name").label.setText(s"$current")
+        case _ => state() = state.now.transition(Event.NameChanged(updated))
+      }
+    }
+
+
+
+    spinEdit.checked.trigger {
+      val current = maxSpins.now
+      spinEdit.checked.foreach(c => target() = if (c) Some(spinEdit) else None)
+      spinEdit.checked.map(if (_) 0.5f else 1f).foreach(spinEdit.entity.tint.color.a = _)
+      val keying = SerialCancelable()
+      val keys = scene.inputs.collect {
+        case KeyTyped(key) => key.toString
+      }
+      target.foreach(t =>
+        keying := t.fold(Cancelable.empty)(e =>
+          keys.takeWhile(_ != "\n")
+            .doOnTerminate(_ => scene.input() = InputEmpty)
+            .scan("")(_.takeRight(e.size - 1) + _).foreach(e.entity.label.setText)))
+
+      val updated = (scene.root / "maxWin").label.text.toString
+      updated match {
+        case x if x == "" => (scene.root / "maxWin").label.setText(s"$current")
+        case x if (x forall Character.isDigit) && (x.toInt >= 100)
+        => state() = state.now.transition(Event.MaxSpinChanged(updated.toInt))
+        case _ => (scene.root / "maxWin").label.setText(s"$current")
+      }
+    }
+
+
+    minEdit.checked.trigger {
+      val current = min.now
+      minEdit.checked.foreach(c => target() = if (c) Some(minEdit) else None)
+      minEdit.checked.map(if (_) 0.5f else 1f).foreach(minEdit.entity.tint.color.a = _)
+      val keying = SerialCancelable()
+      val keys = scene.inputs.collect {
+        case KeyTyped(key) => key.toString
+      }
+      target.foreach(t =>
+        keying := t.fold(Cancelable.empty)(e =>
+          keys.takeWhile(_ != "\n")
+            .doOnTerminate(_ => scene.input() = InputEmpty)
+            .scan("")(_.takeRight(e.size - 1) + _).foreach(e.entity.label.setText)))
+
+      val updated = (scene.root / "min").label.text.toString
+      updated match {
+        case x if x == "" => (scene.root / "min").label.setText(s"$current")
+        case x if (x forall Character.isDigit) && (x.toInt > 0)
+        => state() = state.now.transition(Event.MinChanged(updated.toInt))
+        case _ => (scene.root / "min").label.setText(s"$current")
+      }
+    }
+
+
+    maxEdit.checked.trigger {
+      val current = max.now
+      maxEdit.checked.foreach(c => target() = if (c) Some(maxEdit) else None)
+      maxEdit.checked.map(if (_) 0.5f else 1f).foreach(maxEdit.entity.tint.color.a = _)
+      val keying = SerialCancelable()
+      val keys = scene.inputs.collect {
+        case KeyTyped(key) => key.toString
+      }
+      target.foreach(t =>
+        keying := t.fold(Cancelable.empty)(e =>
+          keys.takeWhile(_ != "\n")
+            .doOnTerminate(_ => scene.input() = InputEmpty)
+            .scan("")(_.takeRight(e.size - 1) + _).foreach(e.entity.label.setText)))
+
+      val updated = (scene.root / "max").label.text.toString
+      updated match {
+        case x if x == "" => (scene.root / "max").label.setText(s"$current")
+        case x if (x forall Character.isDigit) && (x.toInt > 0)
+        => state() = state.now.transition(Event.MaxChanged(updated.toInt))
+        case _ => (scene.root / "max").label.setText(s"$current")
+      }
+    }
 
 
 
     reader.foreach {
-      case Win(num) => {
+      case event: SpinCompleted => {
         try {
-          spinResults() = (num +: spinResults.now).take(maxSpins)
+          state() = state.now.transition(event)
+
         } catch {
           case t: Throwable => t.printStackTrace()
         }
       }
       case _ =>
     }
+  } catch {
+    case t: Throwable => t.printStackTrace()
+  }
+}
+
+case class EditText(entity: Entity, size: Int, enabled: Rx[Boolean])(implicit owner: Ctx.Owner, scene: SceneContext) {
+  val checked = scene.input.fold(false) {
+    case (prev, e: PointerUp) => if (enabled.now && entity.occupies(e.x, e.y)) !prev else prev
+    case (_, InputEmpty) => false
+    case (prev, _) => prev
   }
 }
 

@@ -10,3 +10,5 @@ all {file:/home/wilson/tykhe-workspace/billboard/}billboard/products {file:/home
 all {file:/home/wilson/tykhe-workspace/billboard/}billboard/products {file:/home/wilson/tykhe-workspace/billboard/}billboard/test:products
 ;reload; set _root_.org.jetbrains.sbt.StructureKeys.sbtStructureOptions in Global := "download resolveClassifiers" ;*/*:dumpStructureTo /tmp/sbt-structure1.xml
 all {file:/home/wilson/tykhe-workspace/billboard/}billboard/products {file:/home/wilson/tykhe-workspace/billboard/}billboard/test:products
+;reload; set _root_.org.jetbrains.sbt.StructureKeys.sbtStructureOptions in Global := "download resolveClassifiers" ;*/*:dumpStructureTo /tmp/sbt-structure.xml
+all {file:/home/wilson/tykhe-workspace/billboard/}billboard/products {file:/home/wilson/tykhe-workspace/billboard/}billboard/test:products

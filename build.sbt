@@ -29,7 +29,7 @@ lazy val aggregateSettings = sharedSettings ++ noPublish ++ noSources
 lazy val moduleSettings = sharedSettings ++ publishSettings
 
 lazy val sharedSettings = Seq(
-  version := "0.5.8",
+  version := "0.0.1",
   organization := "io.device",
   licenses += ("Tykhe Software License Agreement" -> url("https://tykhegaming.github.io/LICENSE.txt")),
   credentials += Credentials(Path.userHome / ".ivy2" / ".credentials"),
