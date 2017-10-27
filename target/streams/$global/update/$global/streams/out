@@ -2,6 +2,7 @@
 [0m[[0mdebug[0m] [0m:: building artificial module descriptors from io.device#billboard_2.12;0.0.1[0m
 [0m[[0mdebug[0m] [0m::: dd: dependency: org.scala-lang#scala-compiler;2.12.2 {scala-tool=[default, optional(default)]} (artifacts: )[0m
 [0m[[0mdebug[0m] [0m::: dd: MergedDescriptors(dependency: org.scala-lang#scala-library;2.12.2 {scala-tool=[default, optional(default)]},dependency: org.scala-lang#scala-library;2.12.2 {compile=[default(compile)]}) (artifacts: )[0m
+[0m[[0mdebug[0m] [0m::: dd: dependency: com.github.pathikrit#better-files_2.12;3.2.0 {compile=[default(compile)]} (artifacts: )[0m
 [0m[[0mdebug[0m] [0m::: dd: dependency: io.device#device-usb_2.12;0.5.8 {compile=[default(compile)]} (artifacts: )[0m
 [0m[[0mdebug[0m] [0m::: dd: dependency: io.display#display-desktop_2.12;0.7.3 {compile=[default(compile)]} (artifacts: )[0m
 [0m[[0mdebug[0m] [0m::: dd: dependency: io.display#display-ecs_2.12;0.7.3 {compile=[default(compile)]} (artifacts: )[0m
@@ -10,6 +11,163 @@
 [0m[[0mdebug[0m] [0m::: dd: dependency: com.badlogicgames.gdx#gdx-box2d-platform;1.9.6 {compile=[default(compile)]} (artifacts: gdx-box2d-platform:jar:jar:{classifier=natives-desktop})[0m
 [0m[[0mdebug[0m] [0mparsing /home/wilson/.sbt/0.13/dependency/module/static/org.scala-lang/scala-compiler/2.12.2_temp-resolve-b30569b22c73cfe0a57a99121a32f0ebebd79141/graphs/graph.json[0m
 [0m[[0mdebug[0m] [0mparsing /home/wilson/.sbt/0.13/dependency/module/static/org.scala-lang/scala-library/2.12.2_temp-resolve-d5fc4ad4c13b501f1005cd8883b1c2a9f440fe05/graphs/graph.json[0m
+[0m[[0mdebug[0m] [0m:: call ivy resolution: dependency: com.github.pathikrit#better-files_2.12;3.2.0 {compile=[default(compile)]}[0m
+[0m[[0mdebug[0m] [0m:: resolving dependencies :: org.scala-sbt.temp#temp-resolve-1c22123796aa48667b6b60b96026d3d775eb9bc5;1.0[0m
+[0m[[0mdebug[0m] [0m	confs: [compile, runtime, test, provided, optional, compile-internal, runtime-internal, test-internal, plugin, sources, docs, pom, scala-tool][0m
+[0m[[0mdebug[0m] [0m	validate = true[0m
+[0m[[0mdebug[0m] [0m	refresh = false[0m
+[0m[[0mdebug[0m] [0mresolving dependencies for configuration 'compile'[0m
+[0m[[0mdebug[0m] [0m== resolving dependencies for org.scala-sbt.temp#temp-resolve-1c22123796aa48667b6b60b96026d3d775eb9bc5;1.0 [compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-sbt.temp#temp-resolve-1c22123796aa48667b6b60b96026d3d775eb9bc5;1.0->com.github.pathikrit#better-files_2.12;3.2.0 [compile->default(compile)][0m
+[0m[[0minfo[0m] [0mResolving com.github.pathikrit#better-files_2.12;3.2.0 ...[0m
+[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: com.github.pathikrit#better-files_2.12;3.2.0 {compile=[default(compile)]}[0m
+[0m[[0minfo[0m] [0mResolving com.github.pathikrit#better-files_2.12;3.2.0 ...[0m
+[0m[[0mdebug[0m] [0msbt-chain-delegate: Checking cache for: dependency: com.github.pathikrit#better-files_2.12;3.2.0 {compile=[default(compile)]}[0m
+[0m[[0mdebug[0m] [0m		tried /home/wilson/.ivy2/local/com.github.pathikrit/better-files_2.12/3.2.0/ivys/ivy.xml[0m
+[0m[[0mdebug[0m] [0m	local: no ivy file found for com.github.pathikrit#better-files_2.12;3.2.0[0m
+[0m[[0mdebug[0m] [0m		tried http://repo-desktop:8081/artifactory/tykhe-releases/com/github/pathikrit/better-files_2.12/3.2.0/better-files_2.12-3.2.0.pom[0m
+[0m[[0mdebug[0m] [0mCLIENT ERROR: Not Found url=http://repo-desktop:8081/artifactory/tykhe-releases/com/github/pathikrit/better-files_2.12/3.2.0/better-files_2.12-3.2.0.pom[0m
+[0m[[0mdebug[0m] [0m	tykhe-releases: no ivy file found for com.github.pathikrit#better-files_2.12;3.2.0[0m
+[0m[[0mdebug[0m] [0m		tried http://repo-desktop:8081/artifactory/tykhe-snapshots/com/github/pathikrit/better-files_2.12/3.2.0/better-files_2.12-3.2.0.pom[0m
+[0m[[0mdebug[0m] [0mCLIENT ERROR: Conflict url=http://repo-desktop:8081/artifactory/tykhe-snapshots/com/github/pathikrit/better-files_2.12/3.2.0/better-files_2.12-3.2.0.pom[0m
+[0m[[0mdebug[0m] [0m	tykhe-snapshots: no ivy file found for com.github.pathikrit#better-files_2.12;3.2.0[0m
+[0m[[0mdebug[0m] [0m		tried http://repo-desktop:8081/artifactory/proxy-ivy/com.github.pathikrit/better-files_2.12/3.2.0/ivys/ivy.xml[0m
+[0m[[0mdebug[0m] [0mCLIENT ERROR: Not Found url=http://repo-desktop:8081/artifactory/proxy-ivy/com.github.pathikrit/better-files_2.12/3.2.0/ivys/ivy.xml[0m
+[0m[[0mdebug[0m] [0m	tykhe-proxy-ivy: no ivy file found for com.github.pathikrit#better-files_2.12;3.2.0[0m
+[0m[[0mdebug[0m] [0m		tried http://repo-desktop:8081/artifactory/proxy-maven/com/github/pathikrit/better-files_2.12/3.2.0/better-files_2.12-3.2.0.pom[0m
+[0m[[0mdebug[0m] [0m	tykhe-proxy-maven: found md file for com.github.pathikrit#better-files_2.12;3.2.0[0m
+[0m[[0mdebug[0m] [0m		=> http://repo-desktop:8081/artifactory/proxy-maven/com/github/pathikrit/better-files_2.12/3.2.0/better-files_2.12-3.2.0.pom (3.2.0)[0m
+[0m[[0mdebug[0m] [0mdownloading http://repo-desktop:8081/artifactory/proxy-maven/com/github/pathikrit/better-files_2.12/3.2.0/better-files_2.12-3.2.0.pom ...[0m
+[0m[[0mdebug[0m] [0m	tykhe-proxy-maven: downloading http://repo-desktop:8081/artifactory/proxy-maven/com/github/pathikrit/better-files_2.12/3.2.0/better-files_2.12-3.2.0.pom[0m
+[0m[[0mdebug[0m] [0m	tykhe-proxy-maven: downloading http://repo-desktop:8081/artifactory/proxy-maven/com/github/pathikrit/better-files_2.12/3.2.0/better-files_2.12-3.2.0.pom.sha1[0m
+[0m[[0mdebug[0m] [0msha1 OK for http://repo-desktop:8081/artifactory/proxy-maven/com/github/pathikrit/better-files_2.12/3.2.0/better-files_2.12-3.2.0.pom[0m
+[0m[[0mdebug[0m] [0m	[SUCCESSFUL ] com.github.pathikrit#better-files_2.12;3.2.0!better-files_2.12.pom(pom.original) (45ms)[0m
+[0m[[0mdebug[0m] [0m		tried /home/wilson/.ivy2/local/com.github.pathikrit/better-files_2.12/3.2.0/jars/better-files_2.12.jar[0m
+[0m[[0mdebug[0m] [0m		tried http://repo-desktop:8081/artifactory/tykhe-releases/com/github/pathikrit/better-files_2.12/3.2.0/better-files_2.12-3.2.0.jar[0m
+[0m[[0mdebug[0m] [0mCLIENT ERROR: Not Found url=http://repo-desktop:8081/artifactory/tykhe-releases/com/github/pathikrit/better-files_2.12/3.2.0/better-files_2.12-3.2.0.jar[0m
+[0m[[0mdebug[0m] [0m		tried http://repo-desktop:8081/artifactory/tykhe-snapshots/com/github/pathikrit/better-files_2.12/3.2.0/better-files_2.12-3.2.0.jar[0m
+[0m[[0mdebug[0m] [0mCLIENT ERROR: Conflict url=http://repo-desktop:8081/artifactory/tykhe-snapshots/com/github/pathikrit/better-files_2.12/3.2.0/better-files_2.12-3.2.0.jar[0m
+[0m[[0mdebug[0m] [0m		tried http://repo-desktop:8081/artifactory/proxy-ivy/com.github.pathikrit/better-files_2.12/3.2.0/jars/better-files_2.12.jar[0m
+[0m[[0mdebug[0m] [0mCLIENT ERROR: Not Found url=http://repo-desktop:8081/artifactory/proxy-ivy/com.github.pathikrit/better-files_2.12/3.2.0/jars/better-files_2.12.jar[0m
+[0m[[0mdebug[0m] [0m		tried http://repo-desktop:8081/artifactory/proxy-maven/com/github/pathikrit/better-files_2.12/3.2.0/better-files_2.12-3.2.0.jar[0m
+[0m[[0mdebug[0m] [0m	found com.github.pathikrit#better-files_2.12;3.2.0 in tykhe-proxy-maven[0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-sbt.temp#temp-resolve-1c22123796aa48667b6b60b96026d3d775eb9bc5;1.0->com.github.pathikrit#better-files_2.12;3.2.0 [compile->runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-sbt.temp#temp-resolve-1c22123796aa48667b6b60b96026d3d775eb9bc5;1.0->com.github.pathikrit#better-files_2.12;3.2.0 [compile->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.github.pathikrit#better-files_2.12;3.2.0->org.scala-lang#scala-library;2.12.3 [compile->master(compile)][0m
+[0m[[0minfo[0m] [0mResolving org.scala-lang#scala-library;2.12.3 ...[0m
+[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: org.scala-lang#scala-library;2.12.3 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}[0m
+[0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: org.scala-lang#scala-library;2.12.3[0m
+[0m[[0mdebug[0m] [0m	found org.scala-lang#scala-library;2.12.3 in sbt-chain[0m
+[0m[[0mdebug[0m] [0m	[2.12.3] org.scala-lang#scala-library;2.12.3[0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.github.pathikrit#better-files_2.12;3.2.0->org.scala-lang#scala-library;2.12.3 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.github.pathikrit#better-files_2.12;3.2.0->org.scala-lang#scala-library;2.12.3 [compile->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.github.pathikrit#better-files_2.12;3.2.0->org.scala-lang#scala-library;2.12.3 [compile->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.github.pathikrit#better-files_2.12;3.2.0->org.scala-lang#scala-library;2.12.3 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.github.pathikrit#better-files_2.12;3.2.0->org.scala-lang#scala-library;2.12.3 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-sbt.temp#temp-resolve-1c22123796aa48667b6b60b96026d3d775eb9bc5;1.0->com.github.pathikrit#better-files_2.12;3.2.0 [compile->master][0m
+[0m[[0mdebug[0m] [0mresolving dependencies for configuration 'runtime'[0m
+[0m[[0mdebug[0m] [0m== resolving dependencies for org.scala-sbt.temp#temp-resolve-1c22123796aa48667b6b60b96026d3d775eb9bc5;1.0 [runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies for org.scala-sbt.temp#temp-resolve-1c22123796aa48667b6b60b96026d3d775eb9bc5;1.0 [compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-sbt.temp#temp-resolve-1c22123796aa48667b6b60b96026d3d775eb9bc5;1.0->com.github.pathikrit#better-files_2.12;3.2.0 [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-sbt.temp#temp-resolve-1c22123796aa48667b6b60b96026d3d775eb9bc5;1.0->com.github.pathikrit#better-files_2.12;3.2.0 [compile->runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-sbt.temp#temp-resolve-1c22123796aa48667b6b60b96026d3d775eb9bc5;1.0->com.github.pathikrit#better-files_2.12;3.2.0 [compile->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.github.pathikrit#better-files_2.12;3.2.0->org.scala-lang#scala-library;2.12.3 [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.github.pathikrit#better-files_2.12;3.2.0->org.scala-lang#scala-library;2.12.3 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.github.pathikrit#better-files_2.12;3.2.0->org.scala-lang#scala-library;2.12.3 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.github.pathikrit#better-files_2.12;3.2.0->org.scala-lang#scala-library;2.12.3 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-sbt.temp#temp-resolve-1c22123796aa48667b6b60b96026d3d775eb9bc5;1.0->com.github.pathikrit#better-files_2.12;3.2.0 [compile->master][0m
+[0m[[0mdebug[0m] [0mresolving dependencies for configuration 'test'[0m
+[0m[[0mdebug[0m] [0m== resolving dependencies for org.scala-sbt.temp#temp-resolve-1c22123796aa48667b6b60b96026d3d775eb9bc5;1.0 [test][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies for org.scala-sbt.temp#temp-resolve-1c22123796aa48667b6b60b96026d3d775eb9bc5;1.0 [runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies for org.scala-sbt.temp#temp-resolve-1c22123796aa48667b6b60b96026d3d775eb9bc5;1.0 [compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-sbt.temp#temp-resolve-1c22123796aa48667b6b60b96026d3d775eb9bc5;1.0->com.github.pathikrit#better-files_2.12;3.2.0 [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-sbt.temp#temp-resolve-1c22123796aa48667b6b60b96026d3d775eb9bc5;1.0->com.github.pathikrit#better-files_2.12;3.2.0 [compile->runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-sbt.temp#temp-resolve-1c22123796aa48667b6b60b96026d3d775eb9bc5;1.0->com.github.pathikrit#better-files_2.12;3.2.0 [compile->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.github.pathikrit#better-files_2.12;3.2.0->org.scala-lang#scala-library;2.12.3 [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.github.pathikrit#better-files_2.12;3.2.0->org.scala-lang#scala-library;2.12.3 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.github.pathikrit#better-files_2.12;3.2.0->org.scala-lang#scala-library;2.12.3 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.github.pathikrit#better-files_2.12;3.2.0->org.scala-lang#scala-library;2.12.3 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-sbt.temp#temp-resolve-1c22123796aa48667b6b60b96026d3d775eb9bc5;1.0->com.github.pathikrit#better-files_2.12;3.2.0 [compile->master][0m
+[0m[[0mdebug[0m] [0mresolving dependencies for configuration 'provided'[0m
+[0m[[0mdebug[0m] [0m== resolving dependencies for org.scala-sbt.temp#temp-resolve-1c22123796aa48667b6b60b96026d3d775eb9bc5;1.0 [provided][0m
+[0m[[0mdebug[0m] [0mresolving dependencies for configuration 'optional'[0m
+[0m[[0mdebug[0m] [0m== resolving dependencies for org.scala-sbt.temp#temp-resolve-1c22123796aa48667b6b60b96026d3d775eb9bc5;1.0 [optional][0m
+[0m[[0mdebug[0m] [0mresolving dependencies for configuration 'compile-internal'[0m
+[0m[[0mdebug[0m] [0m== resolving dependencies for org.scala-sbt.temp#temp-resolve-1c22123796aa48667b6b60b96026d3d775eb9bc5;1.0 [compile-internal][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies for org.scala-sbt.temp#temp-resolve-1c22123796aa48667b6b60b96026d3d775eb9bc5;1.0 [compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-sbt.temp#temp-resolve-1c22123796aa48667b6b60b96026d3d775eb9bc5;1.0->com.github.pathikrit#better-files_2.12;3.2.0 [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-sbt.temp#temp-resolve-1c22123796aa48667b6b60b96026d3d775eb9bc5;1.0->com.github.pathikrit#better-files_2.12;3.2.0 [compile->runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-sbt.temp#temp-resolve-1c22123796aa48667b6b60b96026d3d775eb9bc5;1.0->com.github.pathikrit#better-files_2.12;3.2.0 [compile->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.github.pathikrit#better-files_2.12;3.2.0->org.scala-lang#scala-library;2.12.3 [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.github.pathikrit#better-files_2.12;3.2.0->org.scala-lang#scala-library;2.12.3 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.github.pathikrit#better-files_2.12;3.2.0->org.scala-lang#scala-library;2.12.3 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.github.pathikrit#better-files_2.12;3.2.0->org.scala-lang#scala-library;2.12.3 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-sbt.temp#temp-resolve-1c22123796aa48667b6b60b96026d3d775eb9bc5;1.0->com.github.pathikrit#better-files_2.12;3.2.0 [compile->master][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies for org.scala-sbt.temp#temp-resolve-1c22123796aa48667b6b60b96026d3d775eb9bc5;1.0 [optional][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies for org.scala-sbt.temp#temp-resolve-1c22123796aa48667b6b60b96026d3d775eb9bc5;1.0 [provided][0m
+[0m[[0mdebug[0m] [0mresolving dependencies for configuration 'runtime-internal'[0m
+[0m[[0mdebug[0m] [0m== resolving dependencies for org.scala-sbt.temp#temp-resolve-1c22123796aa48667b6b60b96026d3d775eb9bc5;1.0 [runtime-internal][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies for org.scala-sbt.temp#temp-resolve-1c22123796aa48667b6b60b96026d3d775eb9bc5;1.0 [runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies for org.scala-sbt.temp#temp-resolve-1c22123796aa48667b6b60b96026d3d775eb9bc5;1.0 [compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-sbt.temp#temp-resolve-1c22123796aa48667b6b60b96026d3d775eb9bc5;1.0->com.github.pathikrit#better-files_2.12;3.2.0 [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-sbt.temp#temp-resolve-1c22123796aa48667b6b60b96026d3d775eb9bc5;1.0->com.github.pathikrit#better-files_2.12;3.2.0 [compile->runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-sbt.temp#temp-resolve-1c22123796aa48667b6b60b96026d3d775eb9bc5;1.0->com.github.pathikrit#better-files_2.12;3.2.0 [compile->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.github.pathikrit#better-files_2.12;3.2.0->org.scala-lang#scala-library;2.12.3 [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.github.pathikrit#better-files_2.12;3.2.0->org.scala-lang#scala-library;2.12.3 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.github.pathikrit#better-files_2.12;3.2.0->org.scala-lang#scala-library;2.12.3 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.github.pathikrit#better-files_2.12;3.2.0->org.scala-lang#scala-library;2.12.3 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-sbt.temp#temp-resolve-1c22123796aa48667b6b60b96026d3d775eb9bc5;1.0->com.github.pathikrit#better-files_2.12;3.2.0 [compile->master][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies for org.scala-sbt.temp#temp-resolve-1c22123796aa48667b6b60b96026d3d775eb9bc5;1.0 [optional][0m
+[0m[[0mdebug[0m] [0mresolving dependencies for configuration 'test-internal'[0m
+[0m[[0mdebug[0m] [0m== resolving dependencies for org.scala-sbt.temp#temp-resolve-1c22123796aa48667b6b60b96026d3d775eb9bc5;1.0 [test-internal][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies for org.scala-sbt.temp#temp-resolve-1c22123796aa48667b6b60b96026d3d775eb9bc5;1.0 [test][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies for org.scala-sbt.temp#temp-resolve-1c22123796aa48667b6b60b96026d3d775eb9bc5;1.0 [runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies for org.scala-sbt.temp#temp-resolve-1c22123796aa48667b6b60b96026d3d775eb9bc5;1.0 [compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-sbt.temp#temp-resolve-1c22123796aa48667b6b60b96026d3d775eb9bc5;1.0->com.github.pathikrit#better-files_2.12;3.2.0 [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-sbt.temp#temp-resolve-1c22123796aa48667b6b60b96026d3d775eb9bc5;1.0->com.github.pathikrit#better-files_2.12;3.2.0 [compile->runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-sbt.temp#temp-resolve-1c22123796aa48667b6b60b96026d3d775eb9bc5;1.0->com.github.pathikrit#better-files_2.12;3.2.0 [compile->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.github.pathikrit#better-files_2.12;3.2.0->org.scala-lang#scala-library;2.12.3 [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.github.pathikrit#better-files_2.12;3.2.0->org.scala-lang#scala-library;2.12.3 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.github.pathikrit#better-files_2.12;3.2.0->org.scala-lang#scala-library;2.12.3 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.github.pathikrit#better-files_2.12;3.2.0->org.scala-lang#scala-library;2.12.3 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-sbt.temp#temp-resolve-1c22123796aa48667b6b60b96026d3d775eb9bc5;1.0->com.github.pathikrit#better-files_2.12;3.2.0 [compile->master][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies for org.scala-sbt.temp#temp-resolve-1c22123796aa48667b6b60b96026d3d775eb9bc5;1.0 [optional][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies for org.scala-sbt.temp#temp-resolve-1c22123796aa48667b6b60b96026d3d775eb9bc5;1.0 [provided][0m
+[0m[[0mdebug[0m] [0mresolving dependencies for configuration 'plugin'[0m
+[0m[[0mdebug[0m] [0m== resolving dependencies for org.scala-sbt.temp#temp-resolve-1c22123796aa48667b6b60b96026d3d775eb9bc5;1.0 [plugin][0m
+[0m[[0mdebug[0m] [0mresolving dependencies for configuration 'sources'[0m
+[0m[[0mdebug[0m] [0m== resolving dependencies for org.scala-sbt.temp#temp-resolve-1c22123796aa48667b6b60b96026d3d775eb9bc5;1.0 [sources][0m
+[0m[[0mdebug[0m] [0mresolving dependencies for configuration 'docs'[0m
+[0m[[0mdebug[0m] [0m== resolving dependencies for org.scala-sbt.temp#temp-resolve-1c22123796aa48667b6b60b96026d3d775eb9bc5;1.0 [docs][0m
+[0m[[0mdebug[0m] [0mresolving dependencies for configuration 'pom'[0m
+[0m[[0mdebug[0m] [0m== resolving dependencies for org.scala-sbt.temp#temp-resolve-1c22123796aa48667b6b60b96026d3d775eb9bc5;1.0 [pom][0m
+[0m[[0mdebug[0m] [0mresolving dependencies for configuration 'scala-tool'[0m
+[0m[[0mdebug[0m] [0m== resolving dependencies for org.scala-sbt.temp#temp-resolve-1c22123796aa48667b6b60b96026d3d775eb9bc5;1.0 [scala-tool][0m
+[0m[[0mdebug[0m] [0m	resolved ivy file produced in cache[0m
+[0m[[0mdebug[0m] [0m:: downloading artifacts ::[0m
+[0m[[0mdebug[0m] [0m		tried http://repo-desktop:8081/artifactory/proxy-maven/com/github/pathikrit/better-files_2.12/3.2.0/better-files_2.12-3.2.0.jar[0m
+[0m[[0minfo[0m] [0mdownloading http://repo-desktop:8081/artifactory/proxy-maven/com/github/pathikrit/better-files_2.12/3.2.0/better-files_2.12-3.2.0.jar ...[0m
+[0m[[0mdebug[0m] [0m	tykhe-proxy-maven: downloading http://repo-desktop:8081/artifactory/proxy-maven/com/github/pathikrit/better-files_2.12/3.2.0/better-files_2.12-3.2.0.jar[0m
+[0m[[0mdebug[0m] [0m	tykhe-proxy-maven: downloading http://repo-desktop:8081/artifactory/proxy-maven/com/github/pathikrit/better-files_2.12/3.2.0/better-files_2.12-3.2.0.jar.sha1[0m
+[0m[[0mdebug[0m] [0msha1 OK for http://repo-desktop:8081/artifactory/proxy-maven/com/github/pathikrit/better-files_2.12/3.2.0/better-files_2.12-3.2.0.jar[0m
+[0m[[0minfo[0m] [0m	[SUCCESSFUL ] com.github.pathikrit#better-files_2.12;3.2.0!better-files_2.12.jar (35ms)[0m
+[0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.scala-lang#scala-library;2.12.3!scala-library.jar[0m
+[0m[[0mdebug[0m] [0m:: resolution report :: resolve 14654ms :: artifacts dl 44ms[0m
+[0m[[0mdebug[0m] [0m	report for org.scala-sbt.temp#temp-resolve-1c22123796aa48667b6b60b96026d3d775eb9bc5;1.0 compile produced in /home/wilson/tykhe-workspace/billboard/target/resolution-cache/reports/io.device-billboard_2.12-compile.xml[0m
+[0m[[0mdebug[0m] [0m	report for org.scala-sbt.temp#temp-resolve-1c22123796aa48667b6b60b96026d3d775eb9bc5;1.0 runtime produced in /home/wilson/tykhe-workspace/billboard/target/resolution-cache/reports/io.device-billboard_2.12-runtime.xml[0m
+[0m[[0mdebug[0m] [0m	report for org.scala-sbt.temp#temp-resolve-1c22123796aa48667b6b60b96026d3d775eb9bc5;1.0 test produced in /home/wilson/tykhe-workspace/billboard/target/resolution-cache/reports/io.device-billboard_2.12-test.xml[0m
+[0m[[0mdebug[0m] [0m	report for org.scala-sbt.temp#temp-resolve-1c22123796aa48667b6b60b96026d3d775eb9bc5;1.0 provided produced in /home/wilson/tykhe-workspace/billboard/target/resolution-cache/reports/io.device-billboard_2.12-provided.xml[0m
+[0m[[0mdebug[0m] [0m	report for org.scala-sbt.temp#temp-resolve-1c22123796aa48667b6b60b96026d3d775eb9bc5;1.0 optional produced in /home/wilson/tykhe-workspace/billboard/target/resolution-cache/reports/io.device-billboard_2.12-optional.xml[0m
+[0m[[0mdebug[0m] [0m	report for org.scala-sbt.temp#temp-resolve-1c22123796aa48667b6b60b96026d3d775eb9bc5;1.0 compile-internal produced in /home/wilson/tykhe-workspace/billboard/target/resolution-cache/reports/io.device-billboard_2.12-compile-internal.xml[0m
+[0m[[0mdebug[0m] [0m	report for org.scala-sbt.temp#temp-resolve-1c22123796aa48667b6b60b96026d3d775eb9bc5;1.0 runtime-internal produced in /home/wilson/tykhe-workspace/billboard/target/resolution-cache/reports/io.device-billboard_2.12-runtime-internal.xml[0m
+[0m[[0mdebug[0m] [0m	report for org.scala-sbt.temp#temp-resolve-1c22123796aa48667b6b60b96026d3d775eb9bc5;1.0 test-internal produced in /home/wilson/tykhe-workspace/billboard/target/resolution-cache/reports/io.device-billboard_2.12-test-internal.xml[0m
+[0m[[0mdebug[0m] [0m	report for org.scala-sbt.temp#temp-resolve-1c22123796aa48667b6b60b96026d3d775eb9bc5;1.0 plugin produced in /home/wilson/tykhe-workspace/billboard/target/resolution-cache/reports/io.device-billboard_2.12-plugin.xml[0m
+[0m[[0mdebug[0m] [0m	report for org.scala-sbt.temp#temp-resolve-1c22123796aa48667b6b60b96026d3d775eb9bc5;1.0 sources produced in /home/wilson/tykhe-workspace/billboard/target/resolution-cache/reports/io.device-billboard_2.12-sources.xml[0m
+[0m[[0mdebug[0m] [0m	report for org.scala-sbt.temp#temp-resolve-1c22123796aa48667b6b60b96026d3d775eb9bc5;1.0 docs produced in /home/wilson/tykhe-workspace/billboard/target/resolution-cache/reports/io.device-billboard_2.12-docs.xml[0m
+[0m[[0mdebug[0m] [0m	report for org.scala-sbt.temp#temp-resolve-1c22123796aa48667b6b60b96026d3d775eb9bc5;1.0 pom produced in /home/wilson/tykhe-workspace/billboard/target/resolution-cache/reports/io.device-billboard_2.12-pom.xml[0m
+[0m[[0mdebug[0m] [0m	report for org.scala-sbt.temp#temp-resolve-1c22123796aa48667b6b60b96026d3d775eb9bc5;1.0 scala-tool produced in /home/wilson/tykhe-workspace/billboard/target/resolution-cache/reports/io.device-billboard_2.12-scala-tool.xml[0m
+[0m[[0mdebug[0m] [0m	resolve done (14654ms resolve - 44ms download)[0m
+[0m[[0mdebug[0m] [0msaving minigraph to /home/wilson/.sbt/0.13/dependency/module/static/com.github.pathikrit/better-files_2.12/3.2.0_temp-resolve-1c22123796aa48667b6b60b96026d3d775eb9bc5/graphs/graph.json[0m
 [0m[[0mdebug[0m] [0mparsing /home/wilson/.sbt/0.13/dependency/module/static/io.device/device-usb_2.12/0.5.8_temp-resolve-3c764fbf9a91bda0fef82a076f018b4db96706ab/graphs/graph.json[0m
 [0m[[0mdebug[0m] [0mparsing /home/wilson/.sbt/0.13/dependency/module/static/io.display/display-desktop_2.12/0.7.3_temp-resolve-e2cf0074dad9dd84435e204e3625717cb780b5c7/graphs/graph.json[0m
 [0m[[0mdebug[0m] [0mparsing /home/wilson/.sbt/0.13/dependency/module/static/io.display/display-ecs_2.12/0.7.3_temp-resolve-efe19df75a2675f730ca221f7eeee56ebcf3132d/graphs/graph.json[0m
@@ -19,7 +177,8 @@
 [0m[[0mdebug[0m] [0m:: merging update reports[0m
 [0m[[0mdebug[0m] [0m::: -----------[0m
 [0m[[0mdebug[0m] [0m:: compile: loop: List()[0m
-[0m[[0mdebug[0m] [0m:: sort result: io.device:device-usb_2.12, io.display:display-desktop_2.12, io.display:display-ecs_2.12, com.badlogicgames.gdx:gdx-platform, com.badlogicgames.gdx:gdx-freetype-platform, com.badlogicgames.gdx:gdx-box2d-platform, org.usb4java:usb4java, io.device:device-io_2.12, com.badlogicgames.gdx:gdx-backend-lwjgl3, io.display:display-gdx_2.12, com.lihaoyi:scalarx_2.12, com.badlogicgames.gdx:gdx-freetype, com.badlogicgames.box2dlights:box2dlights, com.badlogicgames.ashley:ashley, org.apache.commons:commons-lang3, org.usb4java:libusb4java, org.scodec:scodec-core_2.12, io.monix:monix_2.12, io.device:device-domain_2.12, org.jcraft:jorbis, com.badlogicgames.jlayer:jlayer, org.lwjgl:lwjgl-openal, org.lwjgl:lwjgl-opengl, org.lwjgl:lwjgl-jemalloc, org.lwjgl:lwjgl-glfw, io.display:display-io_2.12, com.badlogicgames.gdx:gdx-box2d, com.chuusai:shapeless_2.12, org.scodec:scodec-bits_2.12, io.monix:monix-reactive_2.12, org.lwjgl:lwjgl, com.badlogicgames.gdx:gdx, io.display:display-domain_2.12, org.jctools:jctools-core, io.monix:monix-eval_2.12, org.typelevel:macro-compat_2.12, io.monix:monix-execution_2.12, io.monix:monix-types_2.12, org.scala-lang:scala-library, org.reactivestreams:reactive-streams[0m
+[0m[[0mdebug[0m] [0m:: sort result: com.github.pathikrit:better-files_2.12, io.device:device-usb_2.12, io.display:display-desktop_2.12, io.display:display-ecs_2.12, com.badlogicgames.gdx:gdx-platform, com.badlogicgames.gdx:gdx-freetype-platform, com.badlogicgames.gdx:gdx-box2d-platform, org.usb4java:usb4java, io.device:device-io_2.12, com.badlogicgames.gdx:gdx-backend-lwjgl3, io.display:display-gdx_2.12, com.lihaoyi:scalarx_2.12, com.badlogicgames.gdx:gdx-freetype, com.badlogicgames.box2dlights:box2dlights, com.badlogicgames.ashley:ashley, org.apache.commons:commons-lang3, org.usb4java:libusb4java, org.scodec:scodec-core_2.12, io.monix:monix_2.12, io.device:device-domain_2.12, org.jcraft:jorbis, com.badlogicgames.jlayer:jlayer, org.lwjgl:lwjgl-openal, org.lwjgl:lwjgl-opengl, org.lwjgl:lwjgl-jemalloc, org.lwjgl:lwjgl-glfw, io.display:display-io_2.12, com.badlogicgames.gdx:gdx-box2d, com.chuusai:shapeless_2.12, org.scodec:scodec-bits_2.12, io.monix:monix-reactive_2.12, org.lwjgl:lwjgl, com.badlogicgames.gdx:gdx, io.display:display-domain_2.12, org.jctools:jctools-core, io.monix:monix-eval_2.12, org.typelevel:macro-compat_2.12, io.monix:monix-execution_2.12, io.monix:monix-types_2.12, org.scala-lang:scala-library, org.reactivestreams:reactive-streams[0m
+[0m[[0mdebug[0m] [0m:: no conflict compile: com.github.pathikrit:better-files_2.12[0m
 [0m[[0mdebug[0m] [0m:: no conflict compile: io.device:device-usb_2.12[0m
 [0m[[0mdebug[0m] [0m:: no conflict compile: io.display:display-desktop_2.12[0m
 [0m[[0mdebug[0m] [0m:: no conflict compile: io.display:display-ecs_2.12[0m
@@ -77,14 +236,16 @@
 [0m[[0mdebug[0m] [0m::: adds io.monix:monix-types_2.12:2.3.0[0m
 [0m[[0mdebug[0m] [0m::: evicted [0m
 [0m[[0mdebug[0m] [0m:: merging module reports for compile: org.scala-lang:scala-library[0m
-[0m[[0mdebug[0m] [0m::: adds org.scala-lang:scala-library:2.12.2 ()[0m
-[0m[[0mdebug[0m] [0m::: evicted [0m
+[0m[[0mdebug[0m] [0m::: resolving conflict in compile:org.scala-lang:scala-library (org.scala-lang:scala-library:2.12.2 (), org.scala-lang:scala-library:2.12.3 ())[0m
+[0m[[0mdebug[0m] [0m::: adds org.scala-lang:scala-library:2.12.3 ()[0m
+[0m[[0mdebug[0m] [0m::: evicted org.scala-lang:scala-library:2.12.2 ()[0m
 [0m[[0mdebug[0m] [0m:: merging module reports for compile: org.reactivestreams:reactive-streams[0m
 [0m[[0mdebug[0m] [0m::: adds org.reactivestreams:reactive-streams:1.0.0[0m
 [0m[[0mdebug[0m] [0m::: evicted [0m
 [0m[[0mdebug[0m] [0m::: -----------[0m
 [0m[[0mdebug[0m] [0m:: runtime: loop: List()[0m
-[0m[[0mdebug[0m] [0m:: sort result: io.device:device-usb_2.12, io.display:display-desktop_2.12, io.display:display-ecs_2.12, com.badlogicgames.gdx:gdx-platform, com.badlogicgames.gdx:gdx-freetype-platform, com.badlogicgames.gdx:gdx-box2d-platform, org.usb4java:usb4java, io.device:device-io_2.12, com.badlogicgames.gdx:gdx-backend-lwjgl3, io.display:display-gdx_2.12, com.lihaoyi:scalarx_2.12, com.badlogicgames.gdx:gdx-freetype, com.badlogicgames.box2dlights:box2dlights, com.badlogicgames.ashley:ashley, org.apache.commons:commons-lang3, org.usb4java:libusb4java, org.scodec:scodec-core_2.12, io.monix:monix_2.12, io.device:device-domain_2.12, org.jcraft:jorbis, com.badlogicgames.jlayer:jlayer, org.lwjgl:lwjgl-openal, org.lwjgl:lwjgl-opengl, org.lwjgl:lwjgl-jemalloc, org.lwjgl:lwjgl-glfw, io.display:display-io_2.12, com.badlogicgames.gdx:gdx-box2d, com.chuusai:shapeless_2.12, org.scodec:scodec-bits_2.12, io.monix:monix-reactive_2.12, org.lwjgl:lwjgl, com.badlogicgames.gdx:gdx, io.display:display-domain_2.12, org.jctools:jctools-core, io.monix:monix-eval_2.12, org.typelevel:macro-compat_2.12, io.monix:monix-execution_2.12, io.monix:monix-types_2.12, org.scala-lang:scala-library, org.reactivestreams:reactive-streams[0m
+[0m[[0mdebug[0m] [0m:: sort result: com.github.pathikrit:better-files_2.12, io.device:device-usb_2.12, io.display:display-desktop_2.12, io.display:display-ecs_2.12, com.badlogicgames.gdx:gdx-platform, com.badlogicgames.gdx:gdx-freetype-platform, com.badlogicgames.gdx:gdx-box2d-platform, org.usb4java:usb4java, io.device:device-io_2.12, com.badlogicgames.gdx:gdx-backend-lwjgl3, io.display:display-gdx_2.12, com.lihaoyi:scalarx_2.12, com.badlogicgames.gdx:gdx-freetype, com.badlogicgames.box2dlights:box2dlights, com.badlogicgames.ashley:ashley, org.apache.commons:commons-lang3, org.usb4java:libusb4java, org.scodec:scodec-core_2.12, io.monix:monix_2.12, io.device:device-domain_2.12, org.jcraft:jorbis, com.badlogicgames.jlayer:jlayer, org.lwjgl:lwjgl-openal, org.lwjgl:lwjgl-opengl, org.lwjgl:lwjgl-jemalloc, org.lwjgl:lwjgl-glfw, io.display:display-io_2.12, com.badlogicgames.gdx:gdx-box2d, com.chuusai:shapeless_2.12, org.scodec:scodec-bits_2.12, io.monix:monix-reactive_2.12, org.lwjgl:lwjgl, com.badlogicgames.gdx:gdx, io.display:display-domain_2.12, org.jctools:jctools-core, io.monix:monix-eval_2.12, org.typelevel:macro-compat_2.12, io.monix:monix-execution_2.12, io.monix:monix-types_2.12, org.scala-lang:scala-library, org.reactivestreams:reactive-streams[0m
+[0m[[0mdebug[0m] [0m:: no conflict runtime: com.github.pathikrit:better-files_2.12[0m
 [0m[[0mdebug[0m] [0m:: no conflict runtime: io.device:device-usb_2.12[0m
 [0m[[0mdebug[0m] [0m:: no conflict runtime: io.display:display-desktop_2.12[0m
 [0m[[0mdebug[0m] [0m:: no conflict runtime: io.display:display-ecs_2.12[0m
@@ -142,14 +303,16 @@
 [0m[[0mdebug[0m] [0m::: adds io.monix:monix-types_2.12:2.3.0[0m
 [0m[[0mdebug[0m] [0m::: evicted [0m
 [0m[[0mdebug[0m] [0m:: merging module reports for runtime: org.scala-lang:scala-library[0m
-[0m[[0mdebug[0m] [0m::: adds org.scala-lang:scala-library:2.12.2 ()[0m
-[0m[[0mdebug[0m] [0m::: evicted [0m
+[0m[[0mdebug[0m] [0m::: resolving conflict in runtime:org.scala-lang:scala-library (org.scala-lang:scala-library:2.12.2 (), org.scala-lang:scala-library:2.12.3 ())[0m
+[0m[[0mdebug[0m] [0m::: adds org.scala-lang:scala-library:2.12.3 ()[0m
+[0m[[0mdebug[0m] [0m::: evicted org.scala-lang:scala-library:2.12.2 ()[0m
 [0m[[0mdebug[0m] [0m:: merging module reports for runtime: org.reactivestreams:reactive-streams[0m
 [0m[[0mdebug[0m] [0m::: adds org.reactivestreams:reactive-streams:1.0.0[0m
 [0m[[0mdebug[0m] [0m::: evicted [0m
 [0m[[0mdebug[0m] [0m::: -----------[0m
 [0m[[0mdebug[0m] [0m:: test: loop: List()[0m
-[0m[[0mdebug[0m] [0m:: sort result: io.device:device-usb_2.12, io.display:display-desktop_2.12, io.display:display-ecs_2.12, com.badlogicgames.gdx:gdx-platform, com.badlogicgames.gdx:gdx-freetype-platform, com.badlogicgames.gdx:gdx-box2d-platform, org.usb4java:usb4java, io.device:device-io_2.12, com.badlogicgames.gdx:gdx-backend-lwjgl3, io.display:display-gdx_2.12, com.lihaoyi:scalarx_2.12, com.badlogicgames.gdx:gdx-freetype, com.badlogicgames.box2dlights:box2dlights, com.badlogicgames.ashley:ashley, org.apache.commons:commons-lang3, org.usb4java:libusb4java, org.scodec:scodec-core_2.12, io.monix:monix_2.12, io.device:device-domain_2.12, org.jcraft:jorbis, com.badlogicgames.jlayer:jlayer, org.lwjgl:lwjgl-openal, org.lwjgl:lwjgl-opengl, org.lwjgl:lwjgl-jemalloc, org.lwjgl:lwjgl-glfw, io.display:display-io_2.12, com.badlogicgames.gdx:gdx-box2d, com.chuusai:shapeless_2.12, org.scodec:scodec-bits_2.12, io.monix:monix-reactive_2.12, org.lwjgl:lwjgl, com.badlogicgames.gdx:gdx, io.display:display-domain_2.12, org.jctools:jctools-core, io.monix:monix-eval_2.12, org.typelevel:macro-compat_2.12, io.monix:monix-execution_2.12, io.monix:monix-types_2.12, org.scala-lang:scala-library, org.reactivestreams:reactive-streams[0m
+[0m[[0mdebug[0m] [0m:: sort result: com.github.pathikrit:better-files_2.12, io.device:device-usb_2.12, io.display:display-desktop_2.12, io.display:display-ecs_2.12, com.badlogicgames.gdx:gdx-platform, com.badlogicgames.gdx:gdx-freetype-platform, com.badlogicgames.gdx:gdx-box2d-platform, org.usb4java:usb4java, io.device:device-io_2.12, com.badlogicgames.gdx:gdx-backend-lwjgl3, io.display:display-gdx_2.12, com.lihaoyi:scalarx_2.12, com.badlogicgames.gdx:gdx-freetype, com.badlogicgames.box2dlights:box2dlights, com.badlogicgames.ashley:ashley, org.apache.commons:commons-lang3, org.usb4java:libusb4java, org.scodec:scodec-core_2.12, io.monix:monix_2.12, io.device:device-domain_2.12, org.jcraft:jorbis, com.badlogicgames.jlayer:jlayer, org.lwjgl:lwjgl-openal, org.lwjgl:lwjgl-opengl, org.lwjgl:lwjgl-jemalloc, org.lwjgl:lwjgl-glfw, io.display:display-io_2.12, com.badlogicgames.gdx:gdx-box2d, com.chuusai:shapeless_2.12, org.scodec:scodec-bits_2.12, io.monix:monix-reactive_2.12, org.lwjgl:lwjgl, com.badlogicgames.gdx:gdx, io.display:display-domain_2.12, org.jctools:jctools-core, io.monix:monix-eval_2.12, org.typelevel:macro-compat_2.12, io.monix:monix-execution_2.12, io.monix:monix-types_2.12, org.scala-lang:scala-library, org.reactivestreams:reactive-streams[0m
+[0m[[0mdebug[0m] [0m:: no conflict test: com.github.pathikrit:better-files_2.12[0m
 [0m[[0mdebug[0m] [0m:: no conflict test: io.device:device-usb_2.12[0m
 [0m[[0mdebug[0m] [0m:: no conflict test: io.display:display-desktop_2.12[0m
 [0m[[0mdebug[0m] [0m:: no conflict test: io.display:display-ecs_2.12[0m
@@ -207,8 +370,9 @@
 [0m[[0mdebug[0m] [0m::: adds io.monix:monix-types_2.12:2.3.0[0m
 [0m[[0mdebug[0m] [0m::: evicted [0m
 [0m[[0mdebug[0m] [0m:: merging module reports for test: org.scala-lang:scala-library[0m
-[0m[[0mdebug[0m] [0m::: adds org.scala-lang:scala-library:2.12.2 ()[0m
-[0m[[0mdebug[0m] [0m::: evicted [0m
+[0m[[0mdebug[0m] [0m::: resolving conflict in test:org.scala-lang:scala-library (org.scala-lang:scala-library:2.12.2 (), org.scala-lang:scala-library:2.12.3 ())[0m
+[0m[[0mdebug[0m] [0m::: adds org.scala-lang:scala-library:2.12.3 ()[0m
+[0m[[0mdebug[0m] [0m::: evicted org.scala-lang:scala-library:2.12.2 ()[0m
 [0m[[0mdebug[0m] [0m:: merging module reports for test: org.reactivestreams:reactive-streams[0m
 [0m[[0mdebug[0m] [0m::: adds org.reactivestreams:reactive-streams:1.0.0[0m
 [0m[[0mdebug[0m] [0m::: evicted [0m
@@ -220,7 +384,8 @@
 [0m[[0mdebug[0m] [0m:: sort result: [0m
 [0m[[0mdebug[0m] [0m::: -----------[0m
 [0m[[0mdebug[0m] [0m:: compile-internal: loop: List()[0m
-[0m[[0mdebug[0m] [0m:: sort result: io.device:device-usb_2.12, io.display:display-desktop_2.12, io.display:display-ecs_2.12, com.badlogicgames.gdx:gdx-platform, com.badlogicgames.gdx:gdx-freetype-platform, com.badlogicgames.gdx:gdx-box2d-platform, org.usb4java:usb4java, io.device:device-io_2.12, com.badlogicgames.gdx:gdx-backend-lwjgl3, io.display:display-gdx_2.12, com.lihaoyi:scalarx_2.12, com.badlogicgames.gdx:gdx-freetype, com.badlogicgames.box2dlights:box2dlights, com.badlogicgames.ashley:ashley, org.apache.commons:commons-lang3, org.usb4java:libusb4java, org.scodec:scodec-core_2.12, io.monix:monix_2.12, io.device:device-domain_2.12, org.jcraft:jorbis, com.badlogicgames.jlayer:jlayer, org.lwjgl:lwjgl-openal, org.lwjgl:lwjgl-opengl, org.lwjgl:lwjgl-jemalloc, org.lwjgl:lwjgl-glfw, io.display:display-io_2.12, com.badlogicgames.gdx:gdx-box2d, com.chuusai:shapeless_2.12, org.scodec:scodec-bits_2.12, io.monix:monix-reactive_2.12, org.lwjgl:lwjgl, com.badlogicgames.gdx:gdx, io.display:display-domain_2.12, org.jctools:jctools-core, io.monix:monix-eval_2.12, org.typelevel:macro-compat_2.12, io.monix:monix-execution_2.12, io.monix:monix-types_2.12, org.scala-lang:scala-library, org.reactivestreams:reactive-streams[0m
+[0m[[0mdebug[0m] [0m:: sort result: com.github.pathikrit:better-files_2.12, io.device:device-usb_2.12, io.display:display-desktop_2.12, io.display:display-ecs_2.12, com.badlogicgames.gdx:gdx-platform, com.badlogicgames.gdx:gdx-freetype-platform, com.badlogicgames.gdx:gdx-box2d-platform, org.usb4java:usb4java, io.device:device-io_2.12, com.badlogicgames.gdx:gdx-backend-lwjgl3, io.display:display-gdx_2.12, com.lihaoyi:scalarx_2.12, com.badlogicgames.gdx:gdx-freetype, com.badlogicgames.box2dlights:box2dlights, com.badlogicgames.ashley:ashley, org.apache.commons:commons-lang3, org.usb4java:libusb4java, org.scodec:scodec-core_2.12, io.monix:monix_2.12, io.device:device-domain_2.12, org.jcraft:jorbis, com.badlogicgames.jlayer:jlayer, org.lwjgl:lwjgl-openal, org.lwjgl:lwjgl-opengl, org.lwjgl:lwjgl-jemalloc, org.lwjgl:lwjgl-glfw, io.display:display-io_2.12, com.badlogicgames.gdx:gdx-box2d, com.chuusai:shapeless_2.12, org.scodec:scodec-bits_2.12, io.monix:monix-reactive_2.12, org.lwjgl:lwjgl, com.badlogicgames.gdx:gdx, io.display:display-domain_2.12, org.jctools:jctools-core, io.monix:monix-eval_2.12, org.typelevel:macro-compat_2.12, io.monix:monix-execution_2.12, io.monix:monix-types_2.12, org.scala-lang:scala-library, org.reactivestreams:reactive-streams[0m
+[0m[[0mdebug[0m] [0m:: no conflict compile-internal: com.github.pathikrit:better-files_2.12[0m
 [0m[[0mdebug[0m] [0m:: no conflict compile-internal: io.device:device-usb_2.12[0m
 [0m[[0mdebug[0m] [0m:: no conflict compile-internal: io.display:display-desktop_2.12[0m
 [0m[[0mdebug[0m] [0m:: no conflict compile-internal: io.display:display-ecs_2.12[0m
@@ -278,14 +443,16 @@
 [0m[[0mdebug[0m] [0m::: adds io.monix:monix-types_2.12:2.3.0[0m
 [0m[[0mdebug[0m] [0m::: evicted [0m
 [0m[[0mdebug[0m] [0m:: merging module reports for compile-internal: org.scala-lang:scala-library[0m
-[0m[[0mdebug[0m] [0m::: adds org.scala-lang:scala-library:2.12.2 ()[0m
-[0m[[0mdebug[0m] [0m::: evicted [0m
+[0m[[0mdebug[0m] [0m::: resolving conflict in compile-internal:org.scala-lang:scala-library (org.scala-lang:scala-library:2.12.2 (), org.scala-lang:scala-library:2.12.3 ())[0m
+[0m[[0mdebug[0m] [0m::: adds org.scala-lang:scala-library:2.12.3 ()[0m
+[0m[[0mdebug[0m] [0m::: evicted org.scala-lang:scala-library:2.12.2 ()[0m
 [0m[[0mdebug[0m] [0m:: merging module reports for compile-internal: org.reactivestreams:reactive-streams[0m
 [0m[[0mdebug[0m] [0m::: adds org.reactivestreams:reactive-streams:1.0.0[0m
 [0m[[0mdebug[0m] [0m::: evicted [0m
 [0m[[0mdebug[0m] [0m::: -----------[0m
 [0m[[0mdebug[0m] [0m:: runtime-internal: loop: List()[0m
-[0m[[0mdebug[0m] [0m:: sort result: io.device:device-usb_2.12, io.display:display-desktop_2.12, io.display:display-ecs_2.12, com.badlogicgames.gdx:gdx-platform, com.badlogicgames.gdx:gdx-freetype-platform, com.badlogicgames.gdx:gdx-box2d-platform, org.usb4java:usb4java, io.device:device-io_2.12, com.badlogicgames.gdx:gdx-backend-lwjgl3, io.display:display-gdx_2.12, com.lihaoyi:scalarx_2.12, com.badlogicgames.gdx:gdx-freetype, com.badlogicgames.box2dlights:box2dlights, com.badlogicgames.ashley:ashley, org.apache.commons:commons-lang3, org.usb4java:libusb4java, org.scodec:scodec-core_2.12, io.monix:monix_2.12, io.device:device-domain_2.12, org.jcraft:jorbis, com.badlogicgames.jlayer:jlayer, org.lwjgl:lwjgl-openal, org.lwjgl:lwjgl-opengl, org.lwjgl:lwjgl-jemalloc, org.lwjgl:lwjgl-glfw, io.display:display-io_2.12, com.badlogicgames.gdx:gdx-box2d, com.chuusai:shapeless_2.12, org.scodec:scodec-bits_2.12, io.monix:monix-reactive_2.12, org.lwjgl:lwjgl, com.badlogicgames.gdx:gdx, io.display:display-domain_2.12, org.jctools:jctools-core, io.monix:monix-eval_2.12, org.typelevel:macro-compat_2.12, io.monix:monix-execution_2.12, io.monix:monix-types_2.12, org.scala-lang:scala-library, org.reactivestreams:reactive-streams[0m
+[0m[[0mdebug[0m] [0m:: sort result: com.github.pathikrit:better-files_2.12, io.device:device-usb_2.12, io.display:display-desktop_2.12, io.display:display-ecs_2.12, com.badlogicgames.gdx:gdx-platform, com.badlogicgames.gdx:gdx-freetype-platform, com.badlogicgames.gdx:gdx-box2d-platform, org.usb4java:usb4java, io.device:device-io_2.12, com.badlogicgames.gdx:gdx-backend-lwjgl3, io.display:display-gdx_2.12, com.lihaoyi:scalarx_2.12, com.badlogicgames.gdx:gdx-freetype, com.badlogicgames.box2dlights:box2dlights, com.badlogicgames.ashley:ashley, org.apache.commons:commons-lang3, org.usb4java:libusb4java, org.scodec:scodec-core_2.12, io.monix:monix_2.12, io.device:device-domain_2.12, org.jcraft:jorbis, com.badlogicgames.jlayer:jlayer, org.lwjgl:lwjgl-openal, org.lwjgl:lwjgl-opengl, org.lwjgl:lwjgl-jemalloc, org.lwjgl:lwjgl-glfw, io.display:display-io_2.12, com.badlogicgames.gdx:gdx-box2d, com.chuusai:shapeless_2.12, org.scodec:scodec-bits_2.12, io.monix:monix-reactive_2.12, org.lwjgl:lwjgl, com.badlogicgames.gdx:gdx, io.display:display-domain_2.12, org.jctools:jctools-core, io.monix:monix-eval_2.12, org.typelevel:macro-compat_2.12, io.monix:monix-execution_2.12, io.monix:monix-types_2.12, org.scala-lang:scala-library, org.reactivestreams:reactive-streams[0m
+[0m[[0mdebug[0m] [0m:: no conflict runtime-internal: com.github.pathikrit:better-files_2.12[0m
 [0m[[0mdebug[0m] [0m:: no conflict runtime-internal: io.device:device-usb_2.12[0m
 [0m[[0mdebug[0m] [0m:: no conflict runtime-internal: io.display:display-desktop_2.12[0m
 [0m[[0mdebug[0m] [0m:: no conflict runtime-internal: io.display:display-ecs_2.12[0m
@@ -343,14 +510,16 @@
 [0m[[0mdebug[0m] [0m::: adds io.monix:monix-types_2.12:2.3.0[0m
 [0m[[0mdebug[0m] [0m::: evicted [0m
 [0m[[0mdebug[0m] [0m:: merging module reports for runtime-internal: org.scala-lang:scala-library[0m
-[0m[[0mdebug[0m] [0m::: adds org.scala-lang:scala-library:2.12.2 ()[0m
-[0m[[0mdebug[0m] [0m::: evicted [0m
+[0m[[0mdebug[0m] [0m::: resolving conflict in runtime-internal:org.scala-lang:scala-library (org.scala-lang:scala-library:2.12.2 (), org.scala-lang:scala-library:2.12.3 ())[0m
+[0m[[0mdebug[0m] [0m::: adds org.scala-lang:scala-library:2.12.3 ()[0m
+[0m[[0mdebug[0m] [0m::: evicted org.scala-lang:scala-library:2.12.2 ()[0m
 [0m[[0mdebug[0m] [0m:: merging module reports for runtime-internal: org.reactivestreams:reactive-streams[0m
 [0m[[0mdebug[0m] [0m::: adds org.reactivestreams:reactive-streams:1.0.0[0m
 [0m[[0mdebug[0m] [0m::: evicted [0m
 [0m[[0mdebug[0m] [0m::: -----------[0m
 [0m[[0mdebug[0m] [0m:: test-internal: loop: List()[0m
-[0m[[0mdebug[0m] [0m:: sort result: io.device:device-usb_2.12, io.display:display-desktop_2.12, io.display:display-ecs_2.12, com.badlogicgames.gdx:gdx-platform, com.badlogicgames.gdx:gdx-freetype-platform, com.badlogicgames.gdx:gdx-box2d-platform, org.usb4java:usb4java, io.device:device-io_2.12, com.badlogicgames.gdx:gdx-backend-lwjgl3, io.display:display-gdx_2.12, com.lihaoyi:scalarx_2.12, com.badlogicgames.gdx:gdx-freetype, com.badlogicgames.box2dlights:box2dlights, com.badlogicgames.ashley:ashley, org.apache.commons:commons-lang3, org.usb4java:libusb4java, org.scodec:scodec-core_2.12, io.monix:monix_2.12, io.device:device-domain_2.12, org.jcraft:jorbis, com.badlogicgames.jlayer:jlayer, org.lwjgl:lwjgl-openal, org.lwjgl:lwjgl-opengl, org.lwjgl:lwjgl-jemalloc, org.lwjgl:lwjgl-glfw, io.display:display-io_2.12, com.badlogicgames.gdx:gdx-box2d, com.chuusai:shapeless_2.12, org.scodec:scodec-bits_2.12, io.monix:monix-reactive_2.12, org.lwjgl:lwjgl, com.badlogicgames.gdx:gdx, io.display:display-domain_2.12, org.jctools:jctools-core, io.monix:monix-eval_2.12, org.typelevel:macro-compat_2.12, io.monix:monix-execution_2.12, io.monix:monix-types_2.12, org.scala-lang:scala-library, org.reactivestreams:reactive-streams[0m
+[0m[[0mdebug[0m] [0m:: sort result: com.github.pathikrit:better-files_2.12, io.device:device-usb_2.12, io.display:display-desktop_2.12, io.display:display-ecs_2.12, com.badlogicgames.gdx:gdx-platform, com.badlogicgames.gdx:gdx-freetype-platform, com.badlogicgames.gdx:gdx-box2d-platform, org.usb4java:usb4java, io.device:device-io_2.12, com.badlogicgames.gdx:gdx-backend-lwjgl3, io.display:display-gdx_2.12, com.lihaoyi:scalarx_2.12, com.badlogicgames.gdx:gdx-freetype, com.badlogicgames.box2dlights:box2dlights, com.badlogicgames.ashley:ashley, org.apache.commons:commons-lang3, org.usb4java:libusb4java, org.scodec:scodec-core_2.12, io.monix:monix_2.12, io.device:device-domain_2.12, org.jcraft:jorbis, com.badlogicgames.jlayer:jlayer, org.lwjgl:lwjgl-openal, org.lwjgl:lwjgl-opengl, org.lwjgl:lwjgl-jemalloc, org.lwjgl:lwjgl-glfw, io.display:display-io_2.12, com.badlogicgames.gdx:gdx-box2d, com.chuusai:shapeless_2.12, org.scodec:scodec-bits_2.12, io.monix:monix-reactive_2.12, org.lwjgl:lwjgl, com.badlogicgames.gdx:gdx, io.display:display-domain_2.12, org.jctools:jctools-core, io.monix:monix-eval_2.12, org.typelevel:macro-compat_2.12, io.monix:monix-execution_2.12, io.monix:monix-types_2.12, org.scala-lang:scala-library, org.reactivestreams:reactive-streams[0m
+[0m[[0mdebug[0m] [0m:: no conflict test-internal: com.github.pathikrit:better-files_2.12[0m
 [0m[[0mdebug[0m] [0m:: no conflict test-internal: io.device:device-usb_2.12[0m
 [0m[[0mdebug[0m] [0m:: no conflict test-internal: io.display:display-desktop_2.12[0m
 [0m[[0mdebug[0m] [0m:: no conflict test-internal: io.display:display-ecs_2.12[0m
@@ -408,8 +577,9 @@
 [0m[[0mdebug[0m] [0m::: adds io.monix:monix-types_2.12:2.3.0[0m
 [0m[[0mdebug[0m] [0m::: evicted [0m
 [0m[[0mdebug[0m] [0m:: merging module reports for test-internal: org.scala-lang:scala-library[0m
-[0m[[0mdebug[0m] [0m::: adds org.scala-lang:scala-library:2.12.2 ()[0m
-[0m[[0mdebug[0m] [0m::: evicted [0m
+[0m[[0mdebug[0m] [0m::: resolving conflict in test-internal:org.scala-lang:scala-library (org.scala-lang:scala-library:2.12.2 (), org.scala-lang:scala-library:2.12.3 ())[0m
+[0m[[0mdebug[0m] [0m::: adds org.scala-lang:scala-library:2.12.3 ()[0m
+[0m[[0mdebug[0m] [0m::: evicted org.scala-lang:scala-library:2.12.2 ()[0m
 [0m[[0mdebug[0m] [0m:: merging module reports for test-internal: org.reactivestreams:reactive-streams[0m
 [0m[[0mdebug[0m] [0m::: adds org.reactivestreams:reactive-streams:1.0.0[0m
 [0m[[0mdebug[0m] [0m::: evicted [0m
@@ -437,3 +607,8 @@
 [0m[[0mdebug[0m] [0m::: evicted [0m
 [0m[[0mdebug[0m] [0mignoring unhandled DependencyDescriptorMediator: class sbt.IvyScala$OverrideScalaMediator[0m
 [0m[[0minfo[0m] [0mDone updating.[0m
+[0m[[33mwarn[0m] [0mScala version was updated by one of library dependencies:[0m
+[0m[[33mwarn[0m] [0m	* org.scala-lang:scala-library:2.12.2 -> 2.12.3[0m
+[0m[[33mwarn[0m] [0mTo force scalaVersion, add the following:[0m
+[0m[[33mwarn[0m] [0m	ivyScala := ivyScala.value map { _.copy(overrideScalaVersion = true) }[0m
+[0m[[33mwarn[0m] [0mRun 'evicted' to see detailed eviction warnings[0m

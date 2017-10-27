@@ -1,15 +1,14 @@
 package roulette.ecs
 
-import com.badlogic.ashley.core.Entity
 import com.badlogic.gdx.graphics.Color
 import display.ecs._
 import display.io._
 import monix.execution.Cancelable
 import monix.execution.cancelables.SerialCancelable
 import monix.reactive.{Observable, Observer}
-import roulette.BillboardState._
+import roulette.Event
 import roulette.Event.SpinCompleted
-import roulette.{BillboardState, Event}
+import roulette.State._
 import rx.{Ctx, Rx, Var}
 
 
@@ -20,65 +19,30 @@ class BillboardScene extends Scene[Any, Any]("billboard1") {
   override def bind(writer: Observer[Any], reader: Observable[Any])(implicit scene: SceneContext): Unit = try {
     scene.loader.loadScene("MainScene")
 
-    val state: Var[BillboardState] = Var(BillboardState("TABLE100", Seq.empty[String], 100,100,10000))
+    reader.foreach {
+      case event: SpinCompleted => {
+        try {
+          state() = state.now.transition(event)
+          println(state.now.toString)
 
-    //target is
+        } catch {
+          case t: Throwable => t.printStackTrace()
+        }
+      }
+      case _ =>
+    }
+
+
     val target = Var(Option.empty[EditText])
     val spinEdit = EditText(scene.root / "maxWin", 3, Var(true))
     val nameEdit = EditText(scene.root / "name", 10, Var(true))
     val minEdit = EditText(scene.root / "min", 5, Var(true))
     val maxEdit = EditText(scene.root / "max", 5, Var(true))
 
-    //Level 0
-    val spinResults = state.map(x => x.history)
-    val maxSpins = state.map(x => x.maxSpinCount)
-    val name = state.map(x => x.name)
-    val min = state.map(x => x.min)
-    val max = state.map(x => x.max)
-
-    //Level 1
-    val lastWinNumber = spinResults.map(x => x.headOption.getOrElse(""))
-    val spinHistory = spinResults.map(x => x.take(maxSpins()))
-
-    val spinCount = Rx(if (spinHistory().isEmpty) maxSpins() else spinHistory().length)
-
-    val evenCount = spinHistory.map(x => x.count(m => evenSymbols.contains(m)))
-    val oddCount = spinHistory.map(x => x.count(m => oddSymbols.contains(m)))
-    val zeroCount = spinHistory.map(x => x.count(m => zeroSymbols.contains(m)))
-
-    val redCount = spinHistory.map(x => x.count(m => redSymbols.contains(m)))
-    val blackCount = spinHistory.map(x => x.count(m => blackSymbols.contains(m)))
-
-    val oneTo18Count = spinHistory.map(x => x.count(m => symbols1to18.contains(m)))
-    val nineteenTo36Count = spinHistory.map(x => x.count(m => symbols19to36.contains(m)))
-
-    val oneTo12Count = spinHistory.map(x => x.count(m => symbols1to12.contains(m)))
-    val thirteenTo24Count = spinHistory.map(x => x.count(m => symbols13to24.contains(m)))
-    val twentyFiveTo36Count = spinHistory.map(x => x.count(m => symbols25to36.contains(m)))
-
-    val greenPercentage = Rx("%d%%".format((100 * zeroCount()) / spinCount()))
-
-    val oddPercentage = Rx("%d%%".format((100 * oddCount()) / spinCount()))
-    val evenPercentage = Rx("%d%%".format((100 * evenCount()) / spinCount()))
-
-    val redPercentage = Rx("%d%%".format((100 * redCount()) / spinCount()))
-    val blackPercentage = Rx("%d%%".format((100 * blackCount()) / spinCount()))
-
-    val oneTo12Percentage = Rx("%d%%".format((100 * oneTo12Count()) / spinCount()))
-    val thirteenTo24Percentage = Rx("%d%%".format((100 * thirteenTo24Count()) / spinCount()))
-    val twentyFiveTo36Percentage = Rx("%d%%".format((100 * twentyFiveTo36Count()) / spinCount()))
-
-    val oneTo18Percentage = Rx("%d%%".format((100 * oneTo18Count()) / spinCount()))
-    val nineteenTo36Percentage = Rx("%d%%".format((100 * nineteenTo36Count()) / spinCount()))
-
-
-    //    val bar = scene.root / "bar"
-    //    val minWidth = bar.dimensions.width
-    //    val barWidth = Rx(100f * oddCount() / spinCount())
-    //    barWidth.foreach(dx => bar.dimensions.width = minWidth + dx)
-
-
-  //  maxSpins.map(x => Rx(x.toString).updates(scene.root / "maxWin"))
+    (scene.root / "maxWin").label.setText(maxSpins.now.toString)
+    (scene.root / "name").label.setText(name.now)
+    (scene.root / "min").label.setText(min.now.toString)
+    (scene.root / "max").label.setText(max.now.toString)
 
     oddPercentage.map(x => Rx(x).updates(scene.root / "oddPercentage"))
     evenPercentage.map(x => Rx(x).updates(scene.root / "evenPercentage"))
@@ -94,54 +58,55 @@ class BillboardScene extends Scene[Any, Any]("billboard1") {
     oneTo18Percentage.map(x => Rx(x).updates(scene.root / "oneTo18Percentage"))
     nineteenTo36Percentage.map(x => Rx(x).updates(scene.root / "nineteenTo36Percentage"))
 
-    val symbols = (0 to 36).map(i => (" " + i.toString).takeRight(2))
-    val emptyCounts = symbols.map(_ -> 0).toMap
-    val liveCounts = spinResults.map(xs => (emptyCounts ++ xs.groupBy(s => s).mapValues(_.size)).toSeq.sortBy(_._2))
-    val hot = liveCounts.map(_.takeRight(4))
-    val cold = liveCounts.map(_.take(4))
+    spinResults.trigger {
 
-    hot.map(m => m.zipWithIndex
-      .foreach {
-        case ((x, y), z) => {
-          val index = 4 - z
-          (scene.root / s"hc$index").label.setText(s"$y")
-          blackSymbols.contains(x) match {
-            case true => Rx(x)
-              .updatesWithColor(scene.root / s"h$index", new Color(0x000000ff))
-            case false => {
-              redSymbols.contains(x) match {
-                case true => Rx(x)
-                  .updatesWithColor(scene.root / s"h$index", new Color(0xc70000ff))
-                case false => Rx(x)
-                  .updatesWithColor(scene.root / s"h$index", new Color(0x2A7302FF))
+      file.clear().writeSerialized(state.now)
+
+
+      hot.map(m => m.zipWithIndex
+        .foreach {
+          case ((x, y), z) => {
+            val index = 4 - z
+            (scene.root / s"hc$index").label.setText(s"$y")
+            blackSymbols.contains(x) match {
+              case true => Rx(x)
+                .updatesWithColor(scene.root / s"h$index", new Color(0x000000ff))
+              case false => {
+                redSymbols.contains(x) match {
+                  case true => Rx(x)
+                    .updatesWithColor(scene.root / s"h$index", new Color(0xc70000ff))
+                  case false => Rx(x)
+                    .updatesWithColor(scene.root / s"h$index", new Color(0x2A7302FF))
+                }
+
               }
-
             }
           }
-        }
-      })
+        })
 
-    cold.map(m => m.zipWithIndex
-      .foreach {
-        case ((x, y), z) => {
-          val index = z + 1
-          (scene.root / s"cc$index").label.setText(s"$y")
-          blackSymbols.contains(x) match {
-            case true => Rx(x)
-              .updatesWithColor(scene.root / s"c$index", new Color(0x000000ff))
-            case false => {
-              redSymbols.contains(x) match {
-                case true => Rx(x)
-                  .updatesWithColor(scene.root / s"c$index", new Color(0xc70000ff))
-                case false => Rx(x)
-                  .updatesWithColor(scene.root / s"c$index", new Color(0x2A7302FF))
+      cold.map(m => m.zipWithIndex
+        .foreach {
+          case ((x, y), z) => {
+            val index = z + 1
+            (scene.root / s"cc$index").label.setText(s"$y")
+            blackSymbols.contains(x) match {
+              case true => Rx(x)
+                .updatesWithColor(scene.root / s"c$index", new Color(0x000000ff))
+              case false => {
+                redSymbols.contains(x) match {
+                  case true => Rx(x)
+                    .updatesWithColor(scene.root / s"c$index", new Color(0xc70000ff))
+                  case false => Rx(x)
+                    .updatesWithColor(scene.root / s"c$index", new Color(0x2A7302FF))
+                }
+
               }
-
             }
           }
-        }
-      })
+        })
 
+
+    }
 
     spinResults.map(m => m.take(16).foldLeft(List[(String, String)]()) { (result, x) =>
       x match {
@@ -189,8 +154,6 @@ class BillboardScene extends Scene[Any, Any]("billboard1") {
       })
 
 
-
-
     nameEdit.checked.trigger {
       val current = name.now
       nameEdit.checked.foreach(c => target() = if (c) Some(nameEdit) else None)
@@ -213,7 +176,6 @@ class BillboardScene extends Scene[Any, Any]("billboard1") {
     }
 
 
-
     spinEdit.checked.trigger {
       val current = maxSpins.now
       spinEdit.checked.foreach(c => target() = if (c) Some(spinEdit) else None)
@@ -231,7 +193,7 @@ class BillboardScene extends Scene[Any, Any]("billboard1") {
       val updated = (scene.root / "maxWin").label.text.toString
       updated match {
         case x if x == "" => (scene.root / "maxWin").label.setText(s"$current")
-        case x if (x forall Character.isDigit) && (x.toInt >= 100)
+        case x if (x forall Character.isDigit) && (x.toInt >= 15)
         => state() = state.now.transition(Event.MaxSpinChanged(updated.toInt))
         case _ => (scene.root / "maxWin").label.setText(s"$current")
       }
@@ -286,30 +248,18 @@ class BillboardScene extends Scene[Any, Any]("billboard1") {
     }
 
 
-
-    reader.foreach {
-      case event: SpinCompleted => {
-        try {
-          state() = state.now.transition(event)
-
-        } catch {
-          case t: Throwable => t.printStackTrace()
-        }
-      }
-      case _ =>
-    }
   } catch {
     case t: Throwable => t.printStackTrace()
   }
 }
 
-case class EditText(entity: Entity, size: Int, enabled: Rx[Boolean])(implicit owner: Ctx.Owner, scene: SceneContext) {
-  val checked = scene.input.fold(false) {
-    case (prev, e: PointerUp) => if (enabled.now && entity.occupies(e.x, e.y)) !prev else prev
-    case (_, InputEmpty) => false
-    case (prev, _) => prev
-  }
-}
+//case class EditText(entity: Entity, size: Int, enabled: Rx[Boolean])(implicit owner: Ctx.Owner, scene: SceneContext) {
+//  val checked = scene.input.fold(false) {
+//    case (prev, e: PointerUp) => if (enabled.now && entity.occupies(e.x, e.y)) !prev else prev
+//    case (_, InputEmpty) => false
+//    case (prev, _) => prev
+//  }
+//}
 
 object BillboardScene {
   def apply(): BillboardScene = new BillboardScene()

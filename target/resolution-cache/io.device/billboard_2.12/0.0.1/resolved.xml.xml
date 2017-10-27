@@ -4,7 +4,7 @@
 		module="billboard_2.12"
 		revision="0.0.1"
 		status="integration"
-		publication="20171019125927"
+		publication="20171025190545"
 	>
 		<license name="Tykhe Software License Agreement" url="https://tykhegaming.github.io/LICENSE.txt" />
 		<description>
@@ -35,6 +35,7 @@
 	<dependencies>
 		<dependency org="org.scala-lang" name="scala-compiler" rev="2.12.2" conf="scala-tool->default,optional(default)"/>
 		<dependency org="org.scala-lang" name="scala-library" rev="2.12.2" conf="scala-tool->default,optional(default);compile->default(compile)"/>
+		<dependency org="com.github.pathikrit" name="better-files_2.12" rev="3.2.0" conf="compile->default(compile)"/>
 		<dependency org="io.device" name="device-usb_2.12" rev="0.5.8" conf="compile->default(compile)"/>
 		<dependency org="io.display" name="display-desktop_2.12" rev="0.7.3" conf="compile->default(compile)"/>
 		<dependency org="io.display" name="display-ecs_2.12" rev="0.7.3" conf="compile->default(compile)"/>

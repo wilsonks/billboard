@@ -1,6 +1,7 @@
 lazy val billboard = project
   .in(file("."))
   .settings(moduleSettings)
+  .settings(libraryDependencies += library("better-files"))
   .settings(libraryDependencies += library("device-usb"))
   .settings(libraryDependencies += library("display-desktop"))
   .settings(libraryDependencies += library("display-ecs"))
@@ -12,6 +13,7 @@ lazy val billboard = project
     assemblyJarName in assembly := "billboard.jar")
 
 lazy val library = Map(
+  "better-files" -> "com.github.pathikrit" % "better-files_2.12" % "3.2.0",
   "device-usb" -> "io.device" %% "device-usb" % versions("device"),
   "display-desktop" -> "io.display" %% "display-desktop" % versions("display"),
   "display-ecs" -> "io.display" %% "display-ecs" % versions("display"),
