@@ -7,7 +7,7 @@ import display.io._
 import monix.execution.Cancelable
 import monix.execution.cancelables.SerialCancelable
 import monix.reactive.{Observable, Observer}
-import roulette.Event
+import roulette.{Event, RouletteResources}
 import roulette.Event.SpinCompleted
 import roulette.State._
 import rx.{Ctx, Rx, Var}
@@ -16,6 +16,18 @@ import rx.{Ctx, Rx, Var}
 class BillboardSceneRB extends Scene[Any, Any]("billboard2") {
 
   implicit def owner: Ctx.Owner = Ctx.Owner.Unsafe
+
+  override def connect(writer: Observer[Any], reader: Observable[Any])(implicit context: WindowContext): Unit = {
+    val res = new RouletteResources("billboard2")
+    res.initAllResources()
+    implicit val scene: SceneContext = new SceneContext(res)(context)
+    context.events.foreach {
+      case WindowResized(width, height) => scene.loader.viewport.update(width, height)
+      case WindowClosed                 => exit
+      case _                            =>
+    }
+    bind(writer, reader)
+  }
 
   override def bind(writer: Observer[Any], reader: Observable[Any])(implicit scene: SceneContext): Unit = try {
     scene.loader.loadScene("MainScene")
